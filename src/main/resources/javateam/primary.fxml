@@ -17,7 +17,7 @@
          <VBox.margin>
             <Insets top="-10.0" />
          </VBox.margin></ImageView>
-      <Label text="Library">
+      <Label text="Library" textFill="#a04747">
          <font>
             <Font name="Vivian Regular" size="55.0" />
          </font>
@@ -43,11 +43,7 @@
                   <Font name="Vivian Regular" size="15.0" />
                </font>
             </Label>
-            <PasswordField prefHeight="25.0" prefWidth="200.0">
-               <FlowPane.margin>
-                  <Insets />
-               </FlowPane.margin>
-            </PasswordField>
+            <TextField prefWidth="200.0" />
          </children>
          <opaqueInsets>
             <Insets top="20.0" />
@@ -121,7 +117,7 @@
       <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <effect>
-      <InnerShadow choke="0.75" radius="19.39" width="58.56">
+      <InnerShadow choke="0.75" height="39.78" radius="24.085" width="58.56">
          <color>
             <Color red="0.5921052694320679" green="0.14437134563922882" blue="0.14437134563922882" />
          </color>
