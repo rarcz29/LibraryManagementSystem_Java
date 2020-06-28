@@ -12,7 +12,7 @@
     <children>
       <ImageView fitHeight="103.0" fitWidth="100.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
-            <Insets top="-40.0" />
+            <Insets top="-30.0" />
          </VBox.margin>
          <image>
             <Image url="@../../img/ksiazka.png" />
@@ -22,7 +22,7 @@
             <Font name="Vivian Regular" size="26.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="20.0" top="-25.0" />
+            <Insets bottom="10.0" top="-25.0" />
          </VBox.margin>
       </Label>
       <FlowPane prefHeight="27.0" prefWidth="436.0">
@@ -95,20 +95,36 @@
             <Insets top="-10.0" />
          </VBox.margin>
       </FlowPane>
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="30.0" prefWidth="118.0" text="Sign up" textFill="#37a3b9">
+      <Button fx:id="secondaryButton1" onAction="#switchToPrimary" prefHeight="29.0" prefWidth="169.0" text="Sign up" textFill="#37a3b9">
          <font>
             <Font name="Vivian Regular" size="15.0" />
          </font>
-         <VBox.margin>
-            <Insets bottom="10.0" />
-         </VBox.margin>
          <effect>
             <InnerShadow choke="0.63">
                <color>
                   <Color red="0.1965562105178833" green="0.6182585954666138" blue="0.7236841917037964" />
                </color>
             </InnerShadow>
-         </effect></Button>
+         </effect>
+         <VBox.margin>
+            <Insets top="-10.0" />
+         </VBox.margin>
+      </Button>
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="19.0" prefWidth="104.0" text="Back" textFill="#a04747">
+         <font>
+            <Font name="Vivian Regular" size="15.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.63">
+               <color>
+                  <Color red="0.6274510025978088" green="0.27843138575553894" blue="0.27843138575553894" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <VBox.margin>
+            <Insets top="-5.0" />
+         </VBox.margin>
+      </Button>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

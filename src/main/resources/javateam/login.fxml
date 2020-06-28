@@ -68,7 +68,7 @@
             <Insets bottom="-10.0" top="-10.0" />
          </VBox.margin>
       </FlowPane>
-      <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Log in" textFill="#5d3e7c">
+      <Button mnemonicParsing="false" onAction="#goToSignUp" prefHeight="35.0" prefWidth="144.0" text="Log in" textFill="#5d3e7c">
          <font>
             <Font name="Vivian Regular" size="16.0" />
          </font>
