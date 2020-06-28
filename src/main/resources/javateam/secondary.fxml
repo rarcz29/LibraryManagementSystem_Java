@@ -114,9 +114,9 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <effect>
-      <InnerShadow choke="0.69" height="44.72" radius="31.2475" width="82.27">
+      <InnerShadow choke="0.69" height="63.5" radius="35.942499999999995" width="82.27">
          <color>
-            <Color red="0.7061403393745422" green="0.14166395366191864" blue="0.14166395366191864" />
+            <Color red="0.5921568870544434" green="0.14509804546833038" blue="0.14509804546833038" />
          </color>
       </InnerShadow>
    </effect>
