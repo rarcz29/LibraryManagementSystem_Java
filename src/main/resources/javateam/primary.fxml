@@ -30,7 +30,7 @@
             <Font name="Vivian Regular" size="21.0" />
          </font>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets top="-10.0" />
          </VBox.margin>
       </Label>
       <FlowPane prefHeight="33.0" prefWidth="415.0">
@@ -53,7 +53,7 @@
             <Insets top="20.0" />
          </opaqueInsets>
       </FlowPane>
-      <FlowPane prefHeight="200.0" prefWidth="200.0">
+      <FlowPane prefHeight="32.0" prefWidth="432.0">
          <children>
             <Label text="Password">
                <font>
@@ -65,23 +65,60 @@
             </Label>
             <PasswordField prefHeight="25.0" prefWidth="200.0" />
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="-10.0" top="-10.0" />
+         </VBox.margin>
       </FlowPane>
-      <Button mnemonicParsing="false" text="Log in" textFill="#292727">
+      <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Log in" textFill="#5d3e7c">
          <font>
-            <Font name="Vivian Regular" size="17.0" />
+            <Font name="Vivian Regular" size="16.0" />
          </font>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+         <effect>
+            <InnerShadow choke="0.66" radius="13.4575" width="34.83">
+               <color>
+                  <Color red="0.41129249334335327" green="0.2895548939704895" blue="0.5043859481811523" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Label text="or" underline="true">
+         <VBox.margin>
+            <Insets bottom="-10.0" top="-10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Vivian Regular" size="15.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="143.0" text="Create Account" textFill="#2984ab">
+         <font>
+            <Font name="Vivian Regular" size="13.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.69">
+               <input>
+                  <ColorAdjust />
+               </input>
+               <color>
+                  <Color red="0.26356399059295654" green="0.5626692175865173" blue="0.7763158082962036" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
          </VBox.margin>
       </Button>
-      <Hyperlink text="Create Account" underline="true">
-         <font>
-            <Font name="Vivian Regular" size="14.0" />
-         </font>
-      </Hyperlink>
    </children>
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <effect>
       <InnerShadow choke="0.75" radius="19.39" width="58.56">
