@@ -28,10 +28,28 @@
             <Font name="Vivian Regular" size="21.0" />
          </font>
          <VBox.margin>
-            <Insets top="20.0" />
+            <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <PasswordField prefWidth="300.0" />
+      <PasswordField prefWidth="300.0">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </PasswordField>
+      <PasswordField layoutX="30.0" layoutY="259.0" prefHeight="25.0" prefWidth="376.0" />
+      <Button mnemonicParsing="false" text="Log in" textFill="#292727">
+         <font>
+            <Font name="Vivian Regular" size="17.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Button>
+      <Hyperlink text="Create Account" underline="true">
+         <font>
+            <Font name="Vivian Regular" size="14.0" />
+         </font>
+      </Hyperlink>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
