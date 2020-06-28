@@ -8,18 +8,30 @@
 
 <VBox alignment="TOP_CENTER" prefHeight="455.0" prefWidth="476.0" spacing="20.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javateam.PrimaryController">
    <children>
-      <ImageView fitHeight="67.0" fitWidth="169.0" pickOnBounds="true" smooth="false" />
-      <Text opacity="0.71" strokeType="OUTSIDE" strokeWidth="0.0" text="Library" wrappingWidth="229.13671612739563">
+      <ImageView fitHeight="99.0" fitWidth="176.0" opacity="0.71" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../img/ksiazka.png" />
+         </image>
+         <VBox.margin>
+            <Insets top="-10.0" />
+         </VBox.margin></ImageView>
+      <Label text="Library">
          <font>
-            <Font name="Vivian Regular" size="56.0" />
+            <Font name="Vivian Regular" size="55.0" />
          </font>
-      </Text>
+         <VBox.margin>
+            <Insets top="-40.0" />
+         </VBox.margin>
+      </Label>
       <Label text="Log in, please">
          <font>
             <Font name="Vivian Regular" size="21.0" />
          </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
       </Label>
-      <PasswordField prefHeight="13.0" prefWidth="262.0" />
+      <PasswordField prefWidth="300.0" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
