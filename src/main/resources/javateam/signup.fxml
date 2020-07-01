@@ -17,7 +17,7 @@
          <image>
             <Image url="@../../img/ksiazka.png" />
          </image></ImageView>
-        <Label alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="48.0" prefWidth="447.0" text="Create your Library Account" textFill="#a04747">
+        <Label alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="48.0" prefWidth="447.0" text="Create your Library Account" textFill="#252424">
          <font>
             <Font name="Vivian Regular" size="26.0" />
          </font>
