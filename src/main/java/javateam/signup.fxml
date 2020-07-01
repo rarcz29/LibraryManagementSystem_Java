@@ -95,7 +95,7 @@
             <Insets top="-10.0" />
          </VBox.margin>
       </FlowPane>
-      <Button fx:id="secondaryButton1" onAction="#signUp" prefHeight="29.0" prefWidth="169.0" text="Sign up" textFill="#37a3b9">
+      <Button fx:id="secondaryButton1" onAction="#switchToPrimary" prefHeight="29.0" prefWidth="169.0" text="Sign up" textFill="#37a3b9">
          <font>
             <Font name="Vivian Regular" size="15.0" />
          </font>
@@ -110,7 +110,7 @@
             <Insets top="-10.0" />
          </VBox.margin>
       </Button>
-        <Button fx:id="secondaryButton" onAction="#goBack" prefHeight="19.0" prefWidth="104.0" text="Back" textFill="#a04747">
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="19.0" prefWidth="104.0" text="Back" textFill="#a04747">
          <font>
             <Font name="Vivian Regular" size="15.0" />
          </font>

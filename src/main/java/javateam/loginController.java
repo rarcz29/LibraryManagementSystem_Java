@@ -12,4 +12,9 @@ public class loginController {
         App.setRoot("signup");
     }
 
+    public void loginToSystem(ActionEvent actionEvent) throws IOException {
+        //tutaj trzeba najpierw sprawdzić, czy user jest w bazie.
+        //Jeśli tak to jest przekierowanie go do  findBook.fxml
+        App.setRoot("findBook");
+    }
 }

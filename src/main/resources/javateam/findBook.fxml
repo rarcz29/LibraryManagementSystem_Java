@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <effect>
+      <InnerShadow choke="0.67" height="50.65" radius="25.8125" width="54.6">
+         <color>
+            <Color red="0.5921568870544434" green="0.14509804546833038" blue="0.14509804546833038" />
+         </color></InnerShadow>
+   </effect>
+   <children>
+      <ImageView fitHeight="89.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <image>
+            <Image url="@src/main/img/ksiazka.png" />
+         </image>
+      </ImageView>
+      <Label text="Find your book">
+         <font>
+            <Font name="Vivian Regular" size="32.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Label>
+      <FlowPane columnHalignment="CENTER" prefHeight="48.0" prefWidth="476.0">
+         <children>
+            <Label alignment="CENTER" text="Title">
+               <FlowPane.margin>
+                  <Insets left="50.0" />
+               </FlowPane.margin>
+               <font>
+                  <Font name="Vivian Regular" size="19.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="261.0">
+               <FlowPane.margin>
+                  <Insets left="30.0" />
+               </FlowPane.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+      </FlowPane>
+      <FlowPane columnHalignment="CENTER" layoutX="10.0" layoutY="198.0" prefHeight="48.0" prefWidth="476.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="83.0" text="Author">
+               <FlowPane.margin>
+                  <Insets left="30.0" />
+               </FlowPane.margin>
+               <font>
+                  <Font name="Vivian Regular" size="19.0" />
+               </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="263.0">
+               <FlowPane.margin>
+                  <Insets left="15.0" />
+               </FlowPane.margin>
+            </TextField>
+         </children>
+      </FlowPane>
+      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="102.0" text="Find" textFill="#972525">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Vivian Regular" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.38" height="40.77" radius="20.872500000000002" width="44.72">
+               <color>
+                  <Color red="0.5921568870544434" green="0.14509804546833038" blue="0.14509804546833038" />
+               </color>
+            </InnerShadow>
+         </effect></Button>
+   </children>
+</VBox>
