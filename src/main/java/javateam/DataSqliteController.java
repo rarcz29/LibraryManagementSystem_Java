@@ -17,7 +17,7 @@ public class DataSqliteController {
             connection = DriverManager.getConnection("jdbc:sqlite:src/database/data.db"); //TODO check connectoin in (.jar) -> data.db, or create new
 
             statement = connection.createStatement();
-            statement.setQueryTimeout(30);  // set timeout to 30 sec.  //TODO niewiem co robi
+            statement.setQueryTimeout(20);  // set timeout to 20 sec.
 
         } catch (SQLException e) {
             // if the error message is "out of memory", it probably means no database file is found
@@ -50,22 +50,29 @@ public class DataSqliteController {
         }
     }
 
+
+    // polecenie wykonywane z zewnątrz
+    public Vector data_select_ksiazki(){
+        String sql = "select * from ksiazki;";  //TODO dostosować do nowej bazy
+        return data_select(sql);
+    }
+
     // Propozycja odczytania, zwraca Vector,
     // pierwsze pole wektora zawiera nazwy kolumn,
     // w ten sposób można odebrać każde pole oddzielnie.
-    // * kompatybinly z każdą tabelą - zmienić polecenie sql
-    public Vector data_select_ksiazki(){
+    // * kompatybinly z każdą tabelą - zmienne polecenie sql
+    private Vector data_select(String sql){
         int max_column;
         Vector dane = new Vector();
         ResultSetMetaData meta = null;
         try
         {
             // run command
-            String sql = "select * from ksiazki;";  //TODO dostosować do nowej bazy
             rs = statement.executeQuery(sql);
 
             meta = rs.getMetaData();
             max_column = meta.getColumnCount();
+
             String info[] = new String[max_column];
 
             for (int i = 0; i < max_column; i++) {
