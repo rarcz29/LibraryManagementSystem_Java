@@ -1,11 +1,12 @@
 package javateam;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.Vector;
 
 // data.db:
-//     book: id_book(int/AI), author(varchar(45)), data(datetime), description(text/null), id_bookstand(int), title(varchar(45)), type(varchar(45))
-//     bookstand: id_bookstand(int/AI), description(text/null)
+//     book: id_book(int/AI), author(varchar(45)), data(datetime), description(text(*255)/null), id_bookstand(int), title(varchar(45)), type(varchar(45))
+//     bookstand: id_bookstand(int/AI), description(text(*255)/null)
 //     list: id_book(int), id_user(int), status(int)
 //     user: id_user(int/AI), acces(int), login(varchar(45)), password(varchar(45))
 //   * sqlite_sequence: name(*), seq(*)
@@ -23,7 +24,11 @@ public class DataSqliteController {
         return data_command_getdata(select_sql);
     }
     // przykładowe
-    public boolean data_insert_book(String title, String author, String type, String desrciption, String data, String id_bookstand){ //przykładowe
+    public boolean data_insert_book(String title, String author, String type, String desrciption, String id_bookstand){ //przykładowe
+        LocalDateTime timepoint = LocalDateTime.now();
+        String data = timepoint.toString();
+        data = data.replace('T',' ');
+        data = data.substring(0, 19);
         String command_sql = "INSERT INTO \"main\".\"book\" (\"title\", \"author\", \"type\", \"description\", \"data\", \"id_bookstand\")"
                 + "VALUES ('"+title+"', '"+author+"', '"+type+"', '"+desrciption+"', '"+data+"', "+id_bookstand+");";
         return data_command(command_sql);
