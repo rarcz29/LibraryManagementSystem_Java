@@ -3,17 +3,21 @@ package javateam;
 import java.sql.*;
 import java.util.Vector;
 
+// data.db:
+//     book: id_book(int/AI), author(varchar(45)), data(datetime), description(text/null), id_bookstand(int), title(varchar(45)), type(varchar(45))
+//     bookstand: id_bookstand(int/AI), description(text/null)
+//     list: id_book(int), id_user(int), status(int)
+//     user: id_user(int/AI), acces(int), login(varchar(45)), password(varchar(45))
+//   * sqlite_sequence: name(*), seq(*)
+
 public class DataSqliteController {
-    //private static Connection connection = null;
-    //private static Statement statement = null;
-    //private static ResultSet rs = null;
-    // TODO zmienić po zakończeniu testów
-    public static Connection connection = null;
-    public static Statement statement = null;
-    public static ResultSet rs = null;
+    private static Connection connection = null;  // łącze
+    private static Statement statement = null;    // polecenia
+    private static ResultSet rs = null;           // odpowiedź
+    private static ResultSetMetaData meta = null; // info dodatkowe
 
     DataSqliteController() {
-
+        // get connection to database
         try {
             // load the sqlite-JDBC driver using the current class loader
             Class.forName("org.sqlite.JDBC");
@@ -32,32 +36,47 @@ public class DataSqliteController {
             e2.printStackTrace();
         }
     }
-
-    // TODO dodać nowe funkcje według potrzeb
-    //  dostosować do nowej bazy
-
-    public Vector data_select_ksiazki(){
-        String select_sql = "select * from ksiazki;";
-        return data_select(select_sql);
+    void close(){
+        // close connection to database
+        try {
+            if (this.connection != null)
+                if (this.statement != null)
+                    if (this.rs != null)
+                        this.rs.close();
+                    this.statement.close();
+                this.connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    // TODO dodać polecenia generujące bazę
+    boolean generate_database(){
+        String generate_sql = "";
+        return this.data_command(generate_sql);
     }
 
-    public boolean data_insert_ksiazki(String title, String author, String type, int id_biblioteka){
-        String insert_sql = "INSERT INTO \"main\".\"ksiazki\" (\"tytul\", \"autor\", \"gatunek\", \"id_biblioteka\")"
-                + "VALUES ('"+title+"','"+author+"','"+type+"',"+id_biblioteka+");";
-        return data_insert(insert_sql);
+    //przykładowe
+    public Vector data_get_book(){
+        String select_sql = "select * from book;";
+        return data_command_get(select_sql);
     }
 
-    // Propozycja dodania, zwraca boolean,
-    // true jeśli wykonano, false gdy nie wykonano lub błąd.
-    // * transakcja dla każdej tabeli oddzielnie
-    // * kompatybinly - zmienne polecenie sql
-    private boolean data_insert(String insert_sql){
+    //przykładowe
+    public boolean data_insert_book(String title, String author, String type, String desrciption, String data, String id_bookstand){ //przykładowe
+        String insert_sql = "INSERT INTO \"main\".\"book\" (\"title\", \"author\", \"type\", \"description\", \"data\", \"id_bookstand\")"
+                + "VALUES ('"+title+"', '"+author+"', '"+type+"', '"+desrciption+"', '"+data+"', "+id_bookstand+");";
+        return data_command(insert_sql);
+    }
+
+    public boolean data_command(String command_sql){
+        // Bez odczytu, zwraca boolean,
+        // true jeśli wykonano, false gdy nie wykonano lub błąd.
         boolean status = false;
         try
         {
             // run transaction
             this.statement.execute("BEGIN TRANSACTION;");
-            this.statement.execute(insert_sql);
+            this.statement.execute(command_sql);
             this.statement.execute("COMMIT;");
             status = true;
         }catch (SQLException e) {
@@ -70,19 +89,16 @@ public class DataSqliteController {
         return status;
     }
 
-    // Propozycja odczytania, zwraca Vector,
-    // vektor z tablicą String[], null gdy niewykonano lub błąd
-    // pierwsze pole wektora zawiera nazwy kolumn.
-    // * w ten sposób można odebrać każde pole oddzielnie
-    // * kompatybinly - zmienne polecenie sql
-    private Vector data_select(String select_sql){
+    public Vector data_command_get(String command_sql){
+        // Odczyt tabel, zwraca Vector,
+        // vektor z tablicą String[], null gdy niewykonano lub błąd
+        // pierwsze pole wektora zawiera nazwy kolumn.
         int max_column;
         Vector dane = null;
-        ResultSetMetaData meta = null;
         try
         {
             // run command
-            rs = statement.executeQuery(select_sql);
+            rs = statement.executeQuery(command_sql);
 
             dane = new Vector();
 
