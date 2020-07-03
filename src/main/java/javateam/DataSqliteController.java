@@ -3,7 +3,7 @@ package javateam;
 import java.sql.*;
 import java.util.Vector;
 
-// data.db: 
+// data.db:
 //     book: id_book(int/AI), author(varchar(45)), data(datetime), description(text/null), id_bookstand(int), title(varchar(45)), type(varchar(45))
 //     bookstand: id_bookstand(int/AI), description(text/null)
 //     list: id_book(int), id_user(int), status(int)
@@ -17,16 +17,21 @@ public class DataSqliteController {
     private static ResultSetMetaData meta = null; // info dodatkowe
     private String url = "jdbc:sqlite:data.db";
 
-    //przykładowe
+    // przykładowe
     public Vector data_get_book(){
         String select_sql = "select * from book;";
         return data_command_getdata(select_sql);
     }
-    //przykładowe
+    // przykładowe
     public boolean data_insert_book(String title, String author, String type, String desrciption, String data, String id_bookstand){ //przykładowe
-        String insert_sql = "INSERT INTO \"main\".\"book\" (\"title\", \"author\", \"type\", \"description\", \"data\", \"id_bookstand\")"
+        String command_sql = "INSERT INTO \"main\".\"book\" (\"title\", \"author\", \"type\", \"description\", \"data\", \"id_bookstand\")"
                 + "VALUES ('"+title+"', '"+author+"', '"+type+"', '"+desrciption+"', '"+data+"', "+id_bookstand+");";
-        return data_command(insert_sql);
+        return data_command(command_sql);
+    }
+    // przykładowe
+    public boolean data_remove_book(String id_book){
+        String command_sql = "DELETE FROM \"main\".\"book\" WHERE \"id_book\" = "+id_book+";";
+        return data_command(command_sql);
     }
 
     DataSqliteController() {
@@ -69,26 +74,27 @@ public class DataSqliteController {
 
     private boolean generate_database(){
         boolean status = true;
-        String generate_sql_1 = "CREATE TABLE IF NOT EXISTS \"bookstand\" (\n" +
+        String[] generate_sql = new String[4];
+        generate_sql[0] = "CREATE TABLE IF NOT EXISTS \"bookstand\" (\n" +
                 "\"id_bookstand\"INTEGER NOT NULL,\n" +
                 "\"description\"TEXT NOT NULL,\n" +
                 "PRIMARY KEY(\"id_bookstand\" AUTOINCREMENT)\n" +
                 ");";
-        String generate_sql_2 = "CREATE TABLE IF NOT EXISTS \"list\" (\n" +
+        generate_sql[1] = "CREATE TABLE IF NOT EXISTS \"list\" (\n" +
                 "\"id_user\"INTEGER NOT NULL,\n" +
                 "\"id_book\"INTEGER NOT NULL,\n" +
                 "\"status\"INTEGER NOT NULL DEFAULT 0,\n" +
                 "FOREIGN KEY(\"id_user\") REFERENCES \"user\"(\"id_user\"),\n" +
                 "FOREIGN KEY(\"id_book\") REFERENCES \"book\"(\"id_book\")\n" +
                 ");";
-        String generate_sql_3 = "CREATE TABLE IF NOT EXISTS \"user\" (\n" +
+        generate_sql[2] = "CREATE TABLE IF NOT EXISTS \"user\" (\n" +
                 "\"id_user\"INTEGER NOT NULL,\n" +
                 "\"login\"VARCHAR(45) NOT NULL UNIQUE,\n" +
                 "\"password\"VARCHAR(45) NOT NULL,\n" +
                 "\"acces\"INTEGER NOT NULL,\n" +
                 "PRIMARY KEY(\"id_user\" AUTOINCREMENT)\n" +
                 ");";
-        String generate_sql_4 = "CREATE TABLE IF NOT EXISTS \"book\" (\n" +
+        generate_sql[3] = "CREATE TABLE IF NOT EXISTS \"book\" (\n" +
                 "\"id_book\"INTEGER NOT NULL,\n" +
                 "\"id_bookstand\"INTEGER NOT NULL,\n" +
                 "\"title\"VARCHAR(45) NOT NULL,\n" +
@@ -99,17 +105,31 @@ public class DataSqliteController {
                 "FOREIGN KEY(\"id_bookstand\") REFERENCES \"bookstand\"(\"id_bookstand\"),\n" +
                 "PRIMARY KEY(\"id_book\" AUTOINCREMENT)\n" +
                 ");";
-        if (!this.data_command(generate_sql_1))
-            status = false;
-        if (!this.data_command(generate_sql_2))
-            status = false;
-        if (!this.data_command(generate_sql_3))
-            status = false;
-        if (!this.data_command(generate_sql_4))
-            status = false;
+        return this.data_command(generate_sql);
+    }
+    public boolean data_command(String[] command_sql){
+        // Bez odczytu, zwraca boolean, wiele poleceń
+        // true jeśli wykonano, false gdy nie wykonano lub błąd.
+        boolean status = false;
+        int count = command_sql.length;
+        try
+        {
+            // run transaction
+            this.statement.execute("BEGIN TRANSACTION;");
+            for(int i=0; i<count; i++)
+                this.statement.execute(command_sql[i]);
+
+            this.statement.execute("COMMIT;");
+            status = true;
+        }catch (SQLException e) {
+            try {
+                this.statement.execute("ROLLBACK;");
+            } catch (SQLException e2) {
+                e2.printStackTrace();
+            }
+        }
         return status;
     }
-
     public boolean data_command(String command_sql){
         // Bez odczytu, zwraca boolean,
         // true jeśli wykonano, false gdy nie wykonano lub błąd.
@@ -130,7 +150,6 @@ public class DataSqliteController {
         }
         return status;
     }
-
     public Vector data_command_getdata(String command_sql){
         // Odczyt tabel, zwraca Vector,
         // vektor z tablicą String[], null gdy niewykonano lub błąd
