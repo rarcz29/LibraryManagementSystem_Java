@@ -3,7 +3,7 @@ package javateam;
 import java.sql.*;
 import java.util.Vector;
 
-// data.db:
+// data.db: 
 //     book: id_book(int/AI), author(varchar(45)), data(datetime), description(text/null), id_bookstand(int), title(varchar(45)), type(varchar(45))
 //     bookstand: id_bookstand(int/AI), description(text/null)
 //     list: id_book(int), id_user(int), status(int)
