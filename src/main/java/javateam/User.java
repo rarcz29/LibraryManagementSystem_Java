@@ -30,19 +30,19 @@ public class User
 
     // user variables
     private String username;
-    private int userid;
-    private bool isAdmin;
+    private int userId;
+    private boolean isAdmin;
 
     // getters
     public String getUsername() { return username; }
-    public int getUserid() { return userid; }
-    public bool getIsAdmin() { return isAdmin; }
+    public int getUserId() { return userId; }
+    public boolean getIsAdmin() { return isAdmin; }
 
     // setter
-    public void setData(String name, int id, bool isAdmin)
+    public void setData(String name, int id, boolean isAdmin)
     {
         username = name;
-        userid = id;
+        userId = id;
         this.isAdmin = isAdmin;
     }
 }
