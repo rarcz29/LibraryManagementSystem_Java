@@ -1,12 +1,18 @@
 package javateam;
 
+import java.awt.*;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-public class loginController {
+import javax.swing.text.html.ImageView;
 
+public class loginController {
+    //InputStream stream = this.getClass().getClassLoader().getResourceAsStream("@../../img/ksiazka.png");
     @FXML
     private void goToSignUp() throws IOException {
         App.setRoot("signup");

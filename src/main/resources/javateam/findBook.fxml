@@ -21,7 +21,7 @@
             <Insets top="20.0" />
          </VBox.margin>
          <image>
-            <Image url="@../../img/ksiazka.png" />
+            <Image url="@../ksiazka.png" />
          </image>
       </ImageView>
       <Label text="Find your book" underline="true">
