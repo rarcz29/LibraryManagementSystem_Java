@@ -13,13 +13,13 @@ import javax.swing.text.html.ImageView;
 
 public class loginController {
     //@FXML
-    //protected TextField userField;
+    //private TextField userField;
 
     @FXML
     private void goToSignUp() throws IOException {
         App.setRoot("signup");
-
-        //System.out.println(userField.getText());
+      //  String getUserField = userField.getText();
+        //System.out.println(getUserField);
 
     }
 
