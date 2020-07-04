@@ -24,12 +24,12 @@
             <Image url="@../../img/ksiazka.png" />
          </image>
       </ImageView>
-      <Label text="Find your book">
+      <Label text="Find your book" underline="true">
          <font>
             <Font name="AveriaSerif-Regular" size="38.0" />
          </font>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets />
          </VBox.margin>
       </Label>
       <FlowPane columnHalignment="CENTER" prefHeight="48.0" prefWidth="476.0">

@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="99.0" fitWidth="176.0" opacity="0.67" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../../img/ksiazka.png" />
+            <Image url="@../../img/ksiazka.png" backgroundLoading="true"/>
          </image>
          <VBox.margin>
             <Insets top="-10.0" />
