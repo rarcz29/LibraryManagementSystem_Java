@@ -43,7 +43,7 @@
                   <Font name="AveriaSerif-Regular" size="20.0" />
                </font>
             </Label>
-            <TextField prefWidth="200.0" />
+            <TextField id = "userField" fx:id="userField" prefWidth="200.0" />
          </children>
          <opaqueInsets>
             <Insets top="20.0" />

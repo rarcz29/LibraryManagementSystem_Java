@@ -12,10 +12,15 @@ import javafx.fxml.FXML;
 import javax.swing.text.html.ImageView;
 
 public class loginController {
-    //InputStream stream = this.getClass().getClassLoader().getResourceAsStream("@../../img/ksiazka.png");
+    //@FXML
+    //protected TextField userField;
+
     @FXML
     private void goToSignUp() throws IOException {
         App.setRoot("signup");
+
+        //System.out.println(userField.getText());
+
     }
 
     public void loginToSystem(ActionEvent actionEvent) throws IOException {
