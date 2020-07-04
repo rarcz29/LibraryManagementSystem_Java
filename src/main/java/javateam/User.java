@@ -38,6 +38,10 @@ public class User
     public int getUserId() { return userId; }
     public boolean getIsAdmin() { return isAdmin; }
 
+    // getters as String
+    public String getUserIdAsString() { return String.valueOf(userId); }
+    public String getIsAdminAsString() { return String.valueOf(isAdmin) }
+
     // setter
     public void setData(String name, int id, boolean isAdmin)
     {
