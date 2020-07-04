@@ -16,20 +16,20 @@
          </color></InnerShadow>
    </effect>
    <children>
-      <ImageView fitHeight="89.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="101.0" fitWidth="156.0" opacity="0.67" pickOnBounds="true" smooth="false">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
          <image>
-            <Image url="@src/main/img/ksiazka.png" />
+            <Image url="@../../img/ksiazka.png" />
          </image>
       </ImageView>
       <Label text="Find your book">
          <font>
-            <Font name="Vivian Regular" size="32.0" />
+            <Font name="AveriaSerif-Regular" size="38.0" />
          </font>
          <VBox.margin>
-            <Insets top="20.0" />
+            <Insets top="10.0" />
          </VBox.margin>
       </Label>
       <FlowPane columnHalignment="CENTER" prefHeight="48.0" prefWidth="476.0">
@@ -39,7 +39,7 @@
                   <Insets left="50.0" />
                </FlowPane.margin>
                <font>
-                  <Font name="Vivian Regular" size="19.0" />
+                  <Font name="AveriaSerif-Regular" size="23.0" />
                </font>
             </Label>
             <TextField prefHeight="25.0" prefWidth="261.0">
@@ -59,7 +59,7 @@
                   <Insets left="30.0" />
                </FlowPane.margin>
                <font>
-                  <Font name="Vivian Regular" size="19.0" />
+                  <Font name="AveriaSerif-Regular" size="23.0" />
                </font>
             </Label>
             <TextField prefHeight="25.0" prefWidth="263.0">
@@ -74,7 +74,7 @@
             <Insets top="20.0" />
          </VBox.margin>
          <font>
-            <Font name="Vivian Regular" size="20.0" />
+            <Font name="AveriaSerif-Regular" size="23.0" />
          </font>
          <effect>
             <InnerShadow choke="0.38" height="40.77" radius="20.872500000000002" width="44.72">
