@@ -27,4 +27,22 @@ public class User
 
         return instance;
     }
+
+    // user variables
+    private String username;
+    private int userid;
+    private bool isAdmin;
+
+    // getters
+    public String getUsername() { return username; }
+    public int getUserid() { return userid; }
+    public bool getIsAdmin() { return isAdmin; }
+
+    // setter
+    public void setData(String name, int id, bool isAdmin)
+    {
+        username = name;
+        userid = id;
+        this.isAdmin = isAdmin;
+    }
 }
