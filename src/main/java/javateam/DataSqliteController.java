@@ -96,7 +96,7 @@ public class DataSqliteController {
                 "\"id_user\"INTEGER NOT NULL,\n" +
                 "\"login\"VARCHAR(45) NOT NULL UNIQUE,\n" +
                 "\"password\"VARCHAR(45) NOT NULL,\n" +
-                "\"acces\"INTEGER NOT NULL,\n" +
+                "\"acces\"TINYINT NOT NULL,\n" +
                 "PRIMARY KEY(\"id_user\" AUTOINCREMENT)\n" +
                 ");";
         generate_sql[3] = "CREATE TABLE IF NOT EXISTS \"book\" (\n" +
