@@ -8,7 +8,6 @@ public class DataSqliteController {
     private static Statement statement = null;    // polecenia
     private static ResultSet rs = null;           // odpowiedź
     private static ResultSetMetaData meta = null; // info dodatkowe
-    // TODO check connectoin in (.jar) -> data.db, create new
     private String url = "jdbc:sqlite:data.db";
 
     public DataSqliteController() {
