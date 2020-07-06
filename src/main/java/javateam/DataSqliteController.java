@@ -81,14 +81,23 @@ public class DataSqliteController {
                 "FOREIGN KEY(\"id_bookstand\") REFERENCES \"bookstand\"(\"id_bookstand\"),\n" +
                 "PRIMARY KEY(\"id_book\" AUTOINCREMENT)\n" +
                 ");";
-        if(!this.data_command(generate_sql[0]))
-            status = false;
-        if(!this.data_command(generate_sql[1]))
-            status = false;
-        if(!this.data_command(generate_sql[2]))
-            status = false;
-        if(!this.data_command(generate_sql[3]))
-            status = false;
+        try
+        {
+            // generate
+            this.statement.execute("BEGIN TRANSACTION;");
+            this.statement.execute(generate_sql[0]);
+            this.statement.execute(generate_sql[1]);
+            this.statement.execute(generate_sql[2]);
+            this.statement.execute(generate_sql[3]);
+            this.statement.execute("COMMIT;");
+            status = true;
+        }catch (SQLException e) {
+            try {
+                this.statement.execute("ROLLBACK;");
+            } catch (SQLException e2) {
+                e2.printStackTrace();
+            }
+        }
         return status;
     }
     public boolean data_command(String command_sql){
@@ -125,7 +134,7 @@ public class DataSqliteController {
             meta = rs.getMetaData();
             max_column = meta.getColumnCount();
 
-            String info[] = new String[max_column];
+            String[] info= new String[max_column];
 
             for (int i = 0; i < max_column; i++) {
                 info[i] = meta.getColumnName(i + 1);
