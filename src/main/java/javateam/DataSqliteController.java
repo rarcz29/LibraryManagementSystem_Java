@@ -1,15 +1,7 @@
 package javateam;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.Vector;
-
-// data.db:
-//     book: id_book(int/AI), author(varchar(80)), data(datetime), description(text(*255)/null), id_bookstand(int), title(varchar(80)), type(varchar(45))
-//     bookstand: id_bookstand(int/AI), description(text(*255)/null)
-//     list: id_book(int), id_user(int), status(int)
-//     user: id_user(int/AI), acces(int), login(varchar(45)), password(varchar(45))
-//   * sqlite_sequence: name(*), seq(*)
 
 public class DataSqliteController {
     private static Connection connection = null;  // łącze
@@ -18,27 +10,6 @@ public class DataSqliteController {
     private static ResultSetMetaData meta = null; // info dodatkowe
     // TODO check connectoin in (.jar) -> data.db, create new
     private String url = "jdbc:sqlite:data.db";
-
-    // przykładowe
-    public Vector data_get_book(){
-        String select_sql = "select * from book;";
-        return data_command_getdata(select_sql);
-    }
-    // przykładowe
-    public boolean data_insert_book(String title, String author, String type, String desrciption, String id_bookstand){
-        LocalDateTime timepoint = LocalDateTime.now();
-        String data = timepoint.toString();
-        data = data.replace('T',' ');
-        data = data.substring(0, 19);
-        String command_sql = "INSERT INTO \"main\".\"book\" (\"title\", \"author\", \"type\", \"description\", \"data\", \"id_bookstand\")"
-                + "VALUES ('"+title+"', '"+author+"', '"+type+"', '"+desrciption+"', '"+data+"', "+id_bookstand+");";
-        return data_command(command_sql);
-    }
-    // przykładowe
-    public boolean data_remove_book(String id_book){
-        String command_sql = "DELETE FROM \"main\".\"book\" WHERE \"id_book\" = "+id_book+";";
-        return data_command(command_sql);
-    }
 
     public DataSqliteController() {
         // get connection to database
@@ -110,28 +81,14 @@ public class DataSqliteController {
                 "FOREIGN KEY(\"id_bookstand\") REFERENCES \"bookstand\"(\"id_bookstand\"),\n" +
                 "PRIMARY KEY(\"id_book\" AUTOINCREMENT)\n" +
                 ");";
-        return this.data_command(generate_sql);
-    }
-    public boolean data_command(String[] command_sql){
-        // return true if done, false if error, mutliple connands
-        boolean status = false;
-        int count = command_sql.length;
-        try
-        {
-            // run transaction
-            this.statement.execute("BEGIN TRANSACTION;");
-            for(int i=0; i<count; i++)
-                this.statement.execute(command_sql[i]);
-
-            this.statement.execute("COMMIT;");
-            status = true;
-        }catch (SQLException e) {
-            try {
-                this.statement.execute("ROLLBACK;");
-            } catch (SQLException e2) {
-                e2.printStackTrace();
-            }
-        }
+        if(!this.data_command(generate_sql[0]))
+            status = false;
+        if(!this.data_command(generate_sql[1]))
+            status = false;
+        if(!this.data_command(generate_sql[2]))
+            status = false;
+        if(!this.data_command(generate_sql[3]))
+            status = false;
         return status;
     }
     public boolean data_command(String command_sql){
