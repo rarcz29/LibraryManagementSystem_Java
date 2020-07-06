@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Vector;
 
 // data.db:
-//     book: id_book(int/AI), author(varchar(45)), data(datetime), description(text(*255)/null), id_bookstand(int), title(varchar(45)), type(varchar(45))
+//     book: id_book(int/AI), author(varchar(80)), data(datetime), description(text(*255)/null), id_bookstand(int), title(varchar(80)), type(varchar(45))
 //     bookstand: id_bookstand(int/AI), description(text(*255)/null)
 //     list: id_book(int), id_user(int), status(int)
 //     user: id_user(int/AI), acces(int), login(varchar(45)), password(varchar(45))
@@ -16,6 +16,7 @@ public class DataSqliteController {
     private static Statement statement = null;    // polecenia
     private static ResultSet rs = null;           // odpowiedź
     private static ResultSetMetaData meta = null; // info dodatkowe
+    // TODO check connectoin in (.jar) -> data.db, create new
     private String url = "jdbc:sqlite:data.db";
 
     // przykładowe
@@ -24,7 +25,7 @@ public class DataSqliteController {
         return data_command_getdata(select_sql);
     }
     // przykładowe
-    public boolean data_insert_book(String title, String author, String type, String desrciption, String id_bookstand){ //przykładowe
+    public boolean data_insert_book(String title, String author, String type, String desrciption, String id_bookstand){
         LocalDateTime timepoint = LocalDateTime.now();
         String data = timepoint.toString();
         data = data.replace('T',' ');
@@ -39,13 +40,12 @@ public class DataSqliteController {
         return data_command(command_sql);
     }
 
-    DataSqliteController() {
+    public DataSqliteController() {
         // get connection to database
         try {
             // load the sqlite-JDBC driver using the current class loader
             Class.forName("org.sqlite.JDBC");
 
-            // TODO check connectoin in (.jar) -> data.db, create new
             // create a database connection
             connection = DriverManager.getConnection(url);
 
@@ -63,7 +63,7 @@ public class DataSqliteController {
             e2.printStackTrace();
         }
     }
-    void close(){
+    public void close(){
         // close connection to database
         try {
             if (this.connection != null)
@@ -102,8 +102,8 @@ public class DataSqliteController {
         generate_sql[3] = "CREATE TABLE IF NOT EXISTS \"book\" (\n" +
                 "\"id_book\"INTEGER NOT NULL,\n" +
                 "\"id_bookstand\"INTEGER NOT NULL,\n" +
-                "\"title\"VARCHAR(45) NOT NULL,\n" +
-                "\"author\"VARCHAR(45) NOT NULL,\n" +
+                "\"title\"VARCHAR(80) NOT NULL,\n" +
+                "\"author\"VARCHAR(80) NOT NULL,\n" +
                 "\"data\"DATETIME NOT NULL,\n" +
                 "\"type\"VARCHAR(45) NOT NULL,\n" +
                 "\"description\"TEXT,\n" +
@@ -113,8 +113,7 @@ public class DataSqliteController {
         return this.data_command(generate_sql);
     }
     public boolean data_command(String[] command_sql){
-        // Bez odczytu, zwraca boolean, wiele poleceń
-        // true jeśli wykonano, false gdy nie wykonano lub błąd.
+        // return true if done, false if error, mutliple connands
         boolean status = false;
         int count = command_sql.length;
         try
@@ -136,8 +135,7 @@ public class DataSqliteController {
         return status;
     }
     public boolean data_command(String command_sql){
-        // Bez odczytu, zwraca boolean,
-        // true jeśli wykonano, false gdy nie wykonano lub błąd.
+        // returns true if done
         boolean status = false;
         try
         {
@@ -156,9 +154,8 @@ public class DataSqliteController {
         return status;
     }
     public Vector data_command_getdata(String command_sql){
-        // Odczyt tabel, zwraca Vector,
-        // vektor z tablicą String[], null gdy niewykonano lub błąd
-        // pierwsze pole wektora zawiera nazwy kolumn.
+        // return Vector containing data, or null
+        // first row contains names of columns
         int max_column;
         Vector dane = null;
         try
