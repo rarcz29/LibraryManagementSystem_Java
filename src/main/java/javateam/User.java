@@ -40,7 +40,7 @@ public class User
 
     // getters as String
     public String getUserIdAsString() { return String.valueOf(userId); }
-    public String getIsAdminAsString() { return String.valueOf(isAdmin); }
+    public String getIsAdminAsString() { return String.valueOf(Boolean.compare(isAdmin, false)); }
 
     // setter
     public void setData(String name, int id, boolean isAdmin)
