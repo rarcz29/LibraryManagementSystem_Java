@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class AddUser implements Operation{
     @Override
-    public Vector<Object> doOperation(String...str){
+    public Vector<?> doOperation(String...str){
 
         DataSqliteController database = new DataSqliteController();
         Vector<Object> result = new Vector<>();
