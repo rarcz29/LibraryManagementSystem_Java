@@ -1,11 +1,21 @@
 package db_strategy;
 
+
 import javateam.DataSqliteController;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Vector;
 
 public class AddBook implements Operation{
     @Override
-    public Vector<Object> doOperation(String...str){
+    public Vector<?> doOperation(String...str){
+        /*
+          Function adding book to book list.
+          Accepts ID Bookstand, Title, Author, Type and Description.
+          */
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
 
         DataSqliteController database = new DataSqliteController();
         Vector<Object> result = new Vector<>();
@@ -16,7 +26,7 @@ public class AddBook implements Operation{
         String description = str[4];
 
         String command = "INSERT INTO book (id_bookstand, title, author, data, type, description) " +
-                            "VALUES ("+id_bookstand+", '"+title+"', '"+author+"', now(), '"+type+"', '"+description+"');";
+                        "VALUES ('"+id_bookstand+"', '"+title+"', '"+author+"', '"+dtf.format(now)+"', '"+type+"', '"+description+"');";
         result.add(database.data_command(command));
 
         database.close();

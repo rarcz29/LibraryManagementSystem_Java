@@ -1,12 +1,16 @@
 package db_strategy;
 
 import javateam.DataSqliteController;
+
 import java.util.Vector;
 
 public class CurrentReadingBook implements Operation{
     @Override
     public Vector<?> doOperation(String...str){
-
+        /*
+          Function sets book as 'Current reading book'.
+          Accepts ID User and ID Book.
+          */
         DataSqliteController database = new DataSqliteController();
         Vector<Object> result = new Vector<>();
         String id_user = str[0];
