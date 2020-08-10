@@ -8,6 +8,7 @@ public class Search implements Operation{
     public Vector<?> doOperation(String...str){
         /*
           Function returns a list of matching results
+          Accepts Title and Author.
          */
         DataSqliteController database = new DataSqliteController();
         Vector<?> result;
