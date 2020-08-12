@@ -1,4 +1,4 @@
-package javateam;
+package home_model;
 
 public interface IHome
 {
