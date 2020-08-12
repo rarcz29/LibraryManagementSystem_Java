@@ -19,10 +19,21 @@ public class HomeAdmin implements IHome
     }
 
     public void addBook(String title, String author, String type,
-                             String description, String bookstandId)
+                        String description, String bookstandId)
     {
         Operation operation = new AddBook();
-        operation.doOperation(bookstandId, title, author, type, description);
+        var result = operation.doOperation(bookstandId, title, author, type, description);
+
+        if (!result.get(0))
+        {
+            String msg = "There's a problem with adding that book to list.\n" +
+                    "Try again.";
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText(msg);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        }
     }
 
     public void addToMyList(String userId, String bookId)
