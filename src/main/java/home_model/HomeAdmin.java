@@ -8,6 +8,8 @@ import db_strategy.Search;
 import db_strategy.AddBook;
 import db_strategy.DelBook;
 
+import db_strategy.AddBookstand;
+
 public class HomeAdmin implements IHome
 {
     public Vector<?> search(String title, String author)
@@ -16,14 +18,14 @@ public class HomeAdmin implements IHome
         return operation.doOperation(title, author);
     }
 
-    public Vector<?> addBook(String tittle, String author, String type,
+    public void addBook(String title, String author, String type,
                              String description, String bookstandId)
     {
         Operation operation = new AddBook();
-        return operation.doOperation();
+        operation.doOperation(bookstandId, title, author, type, description);
     }
 
-    public Vector<?> addToMyList(String userId, String bookId)
+    public void addToMyList(String userId, String bookId)
     {
         String msg = "Admin cannot execute that operation.\n" +
                 "Log in to your account, or create a new one.";
@@ -32,16 +34,11 @@ public class HomeAdmin implements IHome
         alert.setTitle("Alert");
         alert.setHeaderText(null);
         alert.showAndWait();
-
-        return null;
     }
 
-    public Vector<?> removeBook(String bookId)
+    public void removeBook(String bookId)
     {
         Operation operation = new DelBook();
-        var result = operation.doOperation(bookId);
-        System.out.println(result.get(0));
-
-        return null;
+        operation.doOperation(bookId);
     }
 }

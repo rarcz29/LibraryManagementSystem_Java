@@ -5,8 +5,8 @@ import java.util.Vector;
 public interface IHome
 {
     Vector<?> search(String title, String author);
-    Vector<?> addBook(String tittle, String author, String type,
+    void addBook(String title, String author, String type,
                       String description, String bookstandId);
-    Vector<?> addToMyList(String userId, String bookId);
-    Vector<?> removeBook(String bookId);
+    void addToMyList(String userId, String bookId);
+    void removeBook(String bookId);
 }
