@@ -4,32 +4,14 @@ import java.util.Vector;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Alert;
 import db_strategy.Operation;
-import db_strategy.Search;
 import db_strategy.AddBook;
 import db_strategy.DelBook;
 
 import db_strategy.AddBookstand;
 
-public class HomeAdmin implements IHome
+public class HomeAdmin extends IHome
 {
-    public Vector<?> search(String title, String author)
-    {
-        Operation operation = new Search();
-        var result = operation.doOperation(title, author);
-        int size = result.size() - 1;
-
-        String msg = Integer.toString(size) + " books found.\n\n" +
-                "Tip: leave title and author fields empty\n" +
-                "\tto recive full book list";
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setContentText(msg);
-        alert.setTitle(null);
-        alert.setHeaderText(null);
-        alert.showAndWait();
-
-        return result;
-    }
-
+    @Override
     public void addBook(String title, String author, String type,
                         String description, String bookstandId)
     {
@@ -50,6 +32,7 @@ public class HomeAdmin implements IHome
         }
     }
 
+    @Override
     public void addToMyList(String userId, String bookId)
     {
         String msg = "Admin cannot execute that operation.\n" +
@@ -61,6 +44,7 @@ public class HomeAdmin implements IHome
         alert.showAndWait();
     }
 
+    @Override
     public void removeBook(String bookId)
     {
         Operation operation = new DelBook();
