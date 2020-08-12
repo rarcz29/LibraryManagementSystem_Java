@@ -1,5 +1,9 @@
 package home_model;
 
+import java.util.Vector;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
+import db_strategy.Operation;
 import db_strategy.Search;
 import db_strategy.AddBook;
 
@@ -18,13 +22,22 @@ public class HomeAdmin implements IHome
         return operation.doOperation();
     }
 
-    public Vector<?> addToMyList()
+    public Vector<?> addToMyList(String userId, String bookId)
     {
+        String msg = "Admin cannot execute that operation.\n" +
+                "Log in to your account, or create a new one.";
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText(msg);
+        alert.setTitle("Alert");
+        alert.setHeaderText(null);
+        alert.showAndWait();
 
+        return null;
     }
 
-    public Vector<?> removeBooks()
+    public Vector<?> removeBooks(String bookId)
     {
-
+        Operation operation = new DelBook(bookId);
+        return operation.doOperation()
     }
 }
