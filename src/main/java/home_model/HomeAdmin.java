@@ -23,10 +23,12 @@ public class HomeAdmin implements IHome
     {
         Operation operation = new AddBook();
         var result = operation.doOperation(bookstandId, title, author, type, description);
+        boolean success = (boolean)(result.get(0));
 
-        if (!result.get(0))
+        if (!success)
         {
             String msg = "There's a problem with adding that book to list.\n" +
+                    "Check if the bookstand with given id exist.\n" +
                     "Try again.";
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setContentText(msg);
