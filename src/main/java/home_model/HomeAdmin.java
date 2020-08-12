@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import db_strategy.Operation;
 import db_strategy.Search;
 import db_strategy.AddBook;
+import db_strategy.DelBook;
 
 public class HomeAdmin implements IHome
 {
@@ -35,9 +36,12 @@ public class HomeAdmin implements IHome
         return null;
     }
 
-    public Vector<?> removeBooks(String bookId)
+    public Vector<?> removeBook(String bookId)
     {
-        Operation operation = new DelBook(bookId);
-        return operation.doOperation()
+        Operation operation = new DelBook();
+        var result = operation.doOperation(bookId);
+        System.out.println(result.get(0));
+
+        return null;
     }
 }

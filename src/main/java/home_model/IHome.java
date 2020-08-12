@@ -8,5 +8,5 @@ public interface IHome
     Vector<?> addBook(String tittle, String author, String type,
                       String description, String bookstandId);
     Vector<?> addToMyList(String userId, String bookId);
-    Vector<?> removeBooks(String bookId);
+    Vector<?> removeBook(String bookId);
 }
