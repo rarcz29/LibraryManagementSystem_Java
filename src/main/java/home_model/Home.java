@@ -6,7 +6,7 @@ import javafx.scene.control.Alert;
 import db_strategy.Operation;
 import db_strategy.Search;
 
-public abstract class IHome
+public abstract class Home
 {
     public Vector<?> search(String title, String author)
     {
@@ -27,7 +27,7 @@ public abstract class IHome
     }
 
     public abstract void addBook(String title, String author, String type,
-                      String description, String bookstandId);
+                                 String description, String bookstandId);
     public abstract void addToMyList(String userId, String bookId);
     public abstract void removeBook(String bookId);
 }

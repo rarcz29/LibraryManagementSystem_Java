@@ -6,7 +6,7 @@ import javafx.scene.control.Alert;
 import db_strategy.Operation;
 import db_strategy.AddToList;
 
-public class HomeAdmin extends IHome
+public class HomeUser extends Home
 {
     @Override
     public void addBook(String title, String author, String type,
@@ -25,7 +25,7 @@ public class HomeAdmin extends IHome
     @Override
     public void removeBook(String bookId)
     {
-        cannotProceedInfo()
+        cannotProceedInfo();
     }
 
     private void cannotProceedInfo()

@@ -8,7 +8,7 @@ import db_strategy.AddBook;
 import db_strategy.DelBook;
 import db_strategy.AddBookstand;
 
-public class HomeAdmin extends IHome
+public class HomeAdmin extends Home
 {
     @Override
     public void addBook(String title, String author, String type,
