@@ -2,8 +2,9 @@ package home_model;
 
 public interface IHome
 {
-    void search();
-    void addBook();
+    string[][] search(string title, string author);
+    void addBook(string tittle, string author, string type,
+                 string description, string bookstandId);
     void addToMyList();
-    void RemoveBooks
+    void removeBooks();
 }
