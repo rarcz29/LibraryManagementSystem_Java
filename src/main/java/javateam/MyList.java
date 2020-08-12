@@ -13,4 +13,10 @@ public class MyList
         Operation operation = new ShowList();
         return operation.doOperation();
     }
+
+    public void removeBookFromList(String userId, String bookId)
+    {
+        Operation operation = new DelFromList();
+        operation.doOperation(userId, bookId);
+    }
 }
