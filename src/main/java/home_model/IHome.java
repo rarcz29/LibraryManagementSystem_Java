@@ -1,6 +1,6 @@
 package home_model;
 
-        import java.util.Vector;
+import java.util.Vector;
 
 public interface IHome
 {
