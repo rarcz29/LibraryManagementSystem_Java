@@ -15,7 +15,19 @@ public class HomeAdmin implements IHome
     public Vector<?> search(String title, String author)
     {
         Operation operation = new Search();
-        return operation.doOperation(title, author);
+        var result = operation.doOperation(title, author);
+        int size = result.size() - 1;
+
+        String msg = Integer.toString(size) + " books found.\n\n" +
+                "Tip: leave title and author fields empty\n" +
+                "\tto recive full book list";
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText(msg);
+        alert.setTitle(null);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+
+        return result;
     }
 
     public void addBook(String title, String author, String type,
