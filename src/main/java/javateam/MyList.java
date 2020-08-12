@@ -8,5 +8,9 @@ import db_strategy.ShowList;
 
 public class MyList
 {
-
+    public Vector<?> getList()
+    {
+        Operation operation = new ShowList();
+        return operation.doOperation();
+    }
 }
