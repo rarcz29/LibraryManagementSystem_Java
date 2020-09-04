@@ -1,4 +1,4 @@
-package javateam.GUI;
+package javateam;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javateam.GUI.Main;
+import javateam.App;
 
 public class Main extends Application {
 

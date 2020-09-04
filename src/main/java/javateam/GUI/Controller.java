@@ -1,4 +1,4 @@
-package javateam.GUI;
+package javateam;
 
 public class Controller {
 }
