@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="455.0" prefWidth="476.0" spacing="20.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javateam.loginController">
+   <children>
+      <ImageView fitHeight="99.0" fitWidth="176.0" opacity="0.71" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../img/ksiazka.png" />
+         </image>
+         <VBox.margin>
+            <Insets top="-10.0" />
+         </VBox.margin></ImageView>
+      <Label text="Library" textFill="#a04747">
+         <font>
+            <Font name="Vivian Regular" size="55.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="-40.0" />
+         </VBox.margin>
+      </Label>
+      <Label text="Log in, please">
+         <font>
+            <Font name="Vivian Regular" size="21.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="-10.0" />
+         </VBox.margin>
+      </Label>
+      <FlowPane prefHeight="33.0" prefWidth="415.0">
+         <children>
+            <Label text="User">
+               <FlowPane.margin>
+                  <Insets left="40.0" right="40.0" />
+               </FlowPane.margin>
+               <font>
+                  <Font name="Vivian Regular" size="15.0" />
+               </font>
+            </Label>
+            <TextField prefWidth="200.0" />
+         </children>
+         <opaqueInsets>
+            <Insets top="20.0" />
+         </opaqueInsets>
+      </FlowPane>
+      <FlowPane prefHeight="32.0" prefWidth="432.0">
+         <children>
+            <Label text="Password">
+               <font>
+                  <Font name="Vivian Regular" size="15.0" />
+               </font>
+               <FlowPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </FlowPane.margin>
+            </Label>
+            <PasswordField prefHeight="25.0" prefWidth="200.0" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="-10.0" top="-10.0" />
+         </VBox.margin>
+      </FlowPane>
+      <Button mnemonicParsing="false" onAction="#goToSignUp" prefHeight="35.0" prefWidth="144.0" text="Log in" textFill="#5d3e7c">
+         <font>
+            <Font name="Vivian Regular" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+         <effect>
+            <InnerShadow choke="0.66" radius="13.4575" width="34.83">
+               <color>
+                  <Color red="0.41129249334335327" green="0.2895548939704895" blue="0.5043859481811523" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Label text="or" underline="true">
+         <VBox.margin>
+            <Insets bottom="-10.0" top="-10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Vivian Regular" size="15.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="143.0" text="Create Account" textFill="#2984ab">
+         <font>
+            <Font name="Vivian Regular" size="13.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.69">
+               <input>
+                  <ColorAdjust />
+               </input>
+               <color>
+                  <Color red="0.26356399059295654" green="0.5626692175865173" blue="0.7763158082962036" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <effect>
+      <InnerShadow choke="0.75" height="49.17" radius="26.4325" width="58.56">
+         <color>
+            <Color red="0.5921568870544434" green="0.14509804546833038" blue="0.14509804546833038" />
+         </color>
+      </InnerShadow>
+   </effect>
+</VBox>
