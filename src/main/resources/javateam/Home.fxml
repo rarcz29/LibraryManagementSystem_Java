@@ -2,58 +2,14 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <VBox prefHeight="400.0" prefWidth="141.0" style="-fx-background-color: #47F3D3;" BorderPane.alignment="CENTER">
-         <children>
-            <Pane prefHeight="181.0" prefWidth="141.0" style="-fx-background-color: #CBCECD;">
-               <children>
-                  <Label layoutX="10.0" layoutY="117.0" text="Home Library" textFill="WHITE">
-                     <font>
-                        <Font name="Antonio Regular" size="25.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="78.0" fitWidth="73.0" layoutX="34.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../resources/book-stack-128.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: #47F3D3;" text="Home">
-               <font>
-                  <Font name="Antonio Regular" size="18.0" />
-               </font></Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: #47F3D3;" text="My list">
-               <font>
-                  <Font name="Antonio Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="50.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: #47F3D3;" text="Reading now">
-               <font>
-                  <Font name="Antonio Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="90.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: #47F3D3;" text="Bookstands">
-               <font>
-                  <Font name="Antonio Regular" size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="156.0" style="-fx-background-color: #47F3D3;" text="Log out">
-               <font>
-                  <Font name="Antonio Regular" size="18.0" />
-               </font>
-            </Button>
-         </children></VBox>
-   </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <VBox prefHeight="324.0" prefWidth="381.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="427.0" prefWidth="737.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="17.0" prefWidth="455.0" style="-fx-background-color: #47F3D3;" text="Home">
+            <Label prefHeight="44.0" prefWidth="909.0" style="-fx-background-color: #47F3D3;" text="Home">
                <font>
                   <Font name="Antonio Regular" size="30.0" />
                </font>
@@ -97,11 +53,12 @@
             </GridPane>
             <TableView prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="140.33333337306976" text="Title" />
-                <TableColumn prefWidth="120.33332824707031" text="Author" />
-                  <TableColumn prefWidth="36.0" text="Year" />
-                  <TableColumn prefWidth="107.66659545898438" text="Publishing house" />
-                  <TableColumn prefWidth="55.66668701171875" text="Select" />
+                <TableColumn prefWidth="214.00003564357758" text="Title" />
+                <TableColumn prefWidth="159.33326721191406" text="Author" />
+                  <TableColumn minWidth="0.0" prefWidth="63.0" text="Data" />
+                  <TableColumn prefWidth="64.33331298828125" text="Type" />
+                  <TableColumn prefWidth="169.66671752929688" text="Description" />
+                  <TableColumn prefWidth="85.6666259765625" text="id_bookstand" />
               </columns>
             </TableView>
             <GridPane>
