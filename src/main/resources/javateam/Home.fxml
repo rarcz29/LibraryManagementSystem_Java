@@ -5,76 +5,72 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <VBox prefHeight="427.0" prefWidth="737.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label prefHeight="44.0" prefWidth="909.0" style="-fx-background-color: #47F3D3;" text="Home">
-               <font>
-                  <Font name="Antonio Regular" size="30.0" />
-               </font>
-               <padding>
-                  <Insets left="20.0" />
-               </padding></Label>
-            <GridPane alignment="TOP_CENTER" prefHeight="75.0" prefWidth="457.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.66666666666666" minWidth="10.0" prefWidth="235.66666666666666" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="223.66666666666669" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="44.333333333333336" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="172.00000381469727" minHeight="10.0" prefHeight="31.666666666666664" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="172.00000381469727" minHeight="10.0" prefHeight="31.666666666666664" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label text="Author" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0">
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin>
-                  </TextField>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Title" textAlignment="CENTER" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin></TextField>
-                  <Button mnemonicParsing="false" text="Search" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" text="Add book" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-               </children>
-            </GridPane>
-            <GridPane>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-            <TableView prefHeight="200.0" prefWidth="200.0">
-              <columns>
-                <TableColumn prefWidth="214.00003564357758" text="Title" />
-                <TableColumn prefWidth="159.33326721191406" text="Author" />
-                  <TableColumn minWidth="0.0" prefWidth="63.0" text="Data" />
-                  <TableColumn prefWidth="64.33331298828125" text="Type" />
-                  <TableColumn prefWidth="169.66671752929688" text="Description" />
-                  <TableColumn prefWidth="85.6666259765625" text="id_bookstand" />
-              </columns>
-            </TableView>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button mnemonicParsing="false" text="Add to my list" />
-                  <Button mnemonicParsing="false" text="Remove books" GridPane.columnIndex="1" />
-               </children>
-            </GridPane>
-         </children>
-      </VBox>
-   </center>
-</BorderPane>
+<VBox prefHeight="427.0" prefWidth="737.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+ <children>
+    <Label prefHeight="44.0" prefWidth="909.0" style="-fx-background-color: #47F3D3;" text="Home">
+       <font>
+          <Font name="Antonio Regular" size="30.0" />
+       </font>
+       <padding>
+          <Insets left="20.0" />
+       </padding></Label>
+    <GridPane alignment="TOP_CENTER" prefHeight="75.0" prefWidth="457.0">
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.66666666666666" minWidth="10.0" prefWidth="235.66666666666666" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="223.66666666666669" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="44.333333333333336" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="172.00000381469727" minHeight="10.0" prefHeight="31.666666666666664" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="172.00000381469727" minHeight="10.0" prefHeight="31.666666666666664" vgrow="SOMETIMES" />
+      </rowConstraints>
+       <children>
+          <Label text="Author" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <TextField promptText="Title" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0">
+             <GridPane.margin>
+                <Insets left="10.0" />
+             </GridPane.margin>
+          </TextField>
+          <Label alignment="CENTER" contentDisplay="CENTER" text="Title" textAlignment="CENTER" GridPane.rowIndex="1">
+             <GridPane.margin>
+                <Insets />
+             </GridPane.margin>
+          </Label>
+          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" GridPane.columnIndex="1">
+             <GridPane.margin>
+                <Insets />
+             </GridPane.margin></TextField>
+          <Button mnemonicParsing="false" text="Search" GridPane.rowIndex="2" />
+          <Button mnemonicParsing="false" text="Add book" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+       </children>
+    </GridPane>
+    <GridPane>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <TableView prefHeight="200.0" prefWidth="200.0">
+      <columns>
+        <TableColumn prefWidth="214.00003564357758" text="Title" />
+        <TableColumn prefWidth="159.33326721191406" text="Author" />
+          <TableColumn minWidth="0.0" prefWidth="63.0" text="Data" />
+          <TableColumn prefWidth="64.33331298828125" text="Type" />
+          <TableColumn prefWidth="169.66671752929688" text="Description" />
+          <TableColumn prefWidth="85.6666259765625" text="id_bookstand" />
+      </columns>
+    </TableView>
+    <GridPane>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+       <children>
+          <Button mnemonicParsing="false" text="Add to my list" />
+          <Button mnemonicParsing="false" text="Remove books" GridPane.columnIndex="1" />
+       </children>
+    </GridPane>
+ </children>
+</VBox>
