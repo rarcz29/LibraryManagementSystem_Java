@@ -97,8 +97,11 @@
             </GridPane>
             <TableView prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Title" />
-                <TableColumn prefWidth="75.0" text="Author" />
+                <TableColumn prefWidth="140.33333337306976" text="Title" />
+                <TableColumn prefWidth="120.33332824707031" text="Author" />
+                  <TableColumn prefWidth="36.0" text="Year" />
+                  <TableColumn prefWidth="107.66659545898438" text="Publishing house" />
+                  <TableColumn prefWidth="55.66668701171875" text="Select" />
               </columns>
             </TableView>
             <GridPane>
