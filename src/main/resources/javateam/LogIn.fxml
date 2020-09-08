@@ -14,9 +14,9 @@
        <padding>
            <Insets left="20.0" />
        </padding></Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="283.0" text="Welcome! Log in, please. " textAlignment="CENTER" textFill="#47f3d3">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="320.0" text="Welcome! Log in, please. " textAlignment="CENTER" textFill="#47f3d3">
          <font>
-            <Font name="Antonio Regular" size="21.0" />
+            <Font name="Antonio Regular" size="25.0" />
          </font>
       </Label>
       <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Username" />
