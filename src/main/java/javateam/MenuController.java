@@ -25,7 +25,27 @@ public class MenuController
     @FXML
     public void homeButtonOnAction(ActionEvent actionEvent)
     {
-        loadUI("Home1");
+        loadUI("Home");
+    }
+    @FXML
+    public void myListButtonOnAction(ActionEvent actionEvent)
+    {
+        loadUI("MyList");
+    }
+    @FXML
+    public void readingNowButtonOnAction(ActionEvent actionEvent)
+    {
+        loadUI("ReadingNow");
+    }
+    @FXML
+    public void bookstandsButtonOnAction(ActionEvent actionEvent)
+    {
+        loadUI("Bookstands");
+    }
+    @FXML
+    public void LogOutButtonOnAction(ActionEvent actionEvent)
+    {
+        loadUI("LogIn");
     }
 
     private void loadUI(String ui)
