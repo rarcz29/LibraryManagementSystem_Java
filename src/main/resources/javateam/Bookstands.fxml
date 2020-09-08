@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+       <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #47F3D3;" text="Bookstands">
+           <font>
+               <Font name="Antonio Regular" size="30.0" />
+           </font>
+           <padding>
+               <Insets left="20.0" />
+           </padding></Label>
+   </children>
+</VBox>

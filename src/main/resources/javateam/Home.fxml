@@ -55,7 +55,7 @@
             <TextField layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Type" GridPane.columnIndex="1" GridPane.rowIndex="1" />
        </children>
     </GridPane>
-    <TableView maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="264.0" prefWidth="559.0">
+    <TableView maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="274.0" prefWidth="560.0">
       <columns>
         <TableColumn prefWidth="214.00003564357758" text="Title" />
         <TableColumn prefWidth="162.0000457763672" text="Author" />

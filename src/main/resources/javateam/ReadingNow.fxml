@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
        <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #47F3D3;" text="Reading now">
            <font>
@@ -14,7 +14,7 @@
            <padding>
                <Insets left="20.0" />
            </padding></Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="600.0" text="You are reading now...">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="560.0" text="You are reading now...">
          <font>
             <Font name="Antonio Regular" size="22.0" />
          </font>
@@ -30,7 +30,7 @@
                <Insets />
            </VBox.margin></Button>
       <Pane prefHeight="18.0" prefWidth="600.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="82.0" prefWidth="600.0" text="Book's title" textFill="#47f3d3">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="560.0" text="Book's title" textFill="#47f3d3">
          <font>
             <Font name="Antonio Regular" size="52.0" />
          </font>
@@ -48,14 +48,14 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-             <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Add to my list">
+             <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Next">
                  <GridPane.margin>
                      <Insets left="150.0" right="20.0" />
                  </GridPane.margin>
                  <font>
                      <Font name="Antonio Regular" size="14.0" />
                  </font></Button>
-             <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Remove books" GridPane.columnIndex="1">
+             <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Confirm" GridPane.columnIndex="1">
                  <GridPane.margin>
                      <Insets left="20.0" />
                  </GridPane.margin>

@@ -19,7 +19,7 @@ public class MenuController
     @FXML
     public void initialize()
     {
-        loadUI("Home");
+        loadUI("LogIn");
     }
 
     @FXML
