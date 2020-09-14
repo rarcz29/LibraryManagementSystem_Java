@@ -50,6 +50,7 @@ public class DataSqliteController {
     private boolean generate_database(){
         boolean status = true;
         String[] generate_sql = new String[4];
+        String user_sql;
         generate_sql[0] = "CREATE TABLE IF NOT EXISTS \"bookstand\" (\n" +
                 "\"id_bookstand\"INTEGER NOT NULL,\n" +
                 "\"description\"TEXT NOT NULL,\n" +
@@ -80,6 +81,7 @@ public class DataSqliteController {
                 "FOREIGN KEY(\"id_bookstand\") REFERENCES \"bookstand\"(\"id_bookstand\"),\n" +
                 "PRIMARY KEY(\"id_book\" AUTOINCREMENT)\n" +
                 ");";
+        user_sql = "INSERT INTO \"user\" (\"id_user\",\"login\",\"password\",\"access\") VALUES (1,'admin','admin',1);";
         try
         {
             // generate
@@ -88,6 +90,7 @@ public class DataSqliteController {
             this.statement.execute(generate_sql[1]);
             this.statement.execute(generate_sql[2]);
             this.statement.execute(generate_sql[3]);
+            this.statement.execute(user_sql);
             this.statement.execute("COMMIT;");
             status = true;
         }catch (SQLException e) {
