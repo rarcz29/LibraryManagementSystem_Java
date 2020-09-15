@@ -3,7 +3,6 @@ package javateam;
 import db_strategy.AddUser;
 import db_strategy.Operation;
 
-import java.util.RandomAccess;
 import java.util.Vector;
 
 public class Register {
