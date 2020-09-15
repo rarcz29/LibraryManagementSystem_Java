@@ -1,6 +1,7 @@
 package javateam;
 
 import db_strategy.CurrentReadingBook;
+import db_strategy.DelFromList;
 import db_strategy.Operation;
 import db_strategy.ShowList;
 
@@ -25,37 +26,35 @@ public class ReadingNow implements Container{
     }
 
     public class ReadingNowIterator implements Iterator {
-        int index;
-        int indexPrevious;
+        int index = -1;
+        //int indexPrevious = 0;
 
         @Override
         public boolean hasNext() {
-            if (index < readingNowData.size()) return true;
-            index--;
-            return false;
+            return index < readingNowData.size() - 1;
         }
 
         public boolean hasPrevious() {
-            if (index >= 0) return true;
-            index++;
-            return false;
+            return index > 0;
         }
 
         @Override
         public Object next() {
+            //if (index < 0) index ++;
             if(this.hasNext()){
-                indexPrevious = index;
-                return readingNowData.get(index++);
+                //indexPrevious = index;
+                return readingNowData.get(++index);
             }
-            return readingNowData.get(indexPrevious);
+            return readingNowData.get(index);
         }
 
         public Object previous() {
+            //if (index >= readingNowData.size()) index --;
             if(this.hasPrevious()){
-                indexPrevious = index;
-                return readingNowData.get(index--);
+                //indexPrevious = index;
+                return readingNowData.get(--index);
             }
-            return readingNowData.get(indexPrevious);
+            return readingNowData.get(index);
         }
 
         public Vector<?> confirm() {
@@ -63,8 +62,24 @@ public class ReadingNow implements Container{
             Operation currentbook = new CurrentReadingBook();
             String idUser = User.getInstance().getUserIdAsString();
 
-            if(indexPrevious < readingNowData.size()) {
-                String idBook = String.valueOf(((String[])readingNowData.get(indexPrevious))[0]);
+            if(index < readingNowData.size() && index >= 0) {
+                String idBook = String.valueOf(((String[])readingNowData.get(index))[0]);
+                result = (Vector<Boolean>) currentbook.doOperation(idUser, idBook);
+            }
+            else {
+                result = new Vector<>();
+                result.add(false);
+            }
+            return result;
+        }
+
+        public Vector<?> delete() {
+            Vector<Boolean> result;
+            Operation currentbook = new DelFromList();
+            String idUser = User.getInstance().getUserIdAsString();
+
+            if(index < readingNowData.size() && index >= 0) {
+                String idBook = String.valueOf(((String[])readingNowData.get(index))[0]);
                 result = (Vector<Boolean>) currentbook.doOperation(idUser, idBook);
             }
             else {
