@@ -7,6 +7,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Alert;
+
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +21,7 @@ public class MenuController
     @FXML
     public void initialize()
     {
-        loadUI("LogIn");
+        loadUI("Home");
     }
 
     @FXML
@@ -43,9 +45,9 @@ public class MenuController
         loadUI("Bookstands");
     }
     @FXML
-    public void LogOutButtonOnAction(ActionEvent actionEvent)
+    public void LogOutButtonOnAction() throws IOException
     {
-        loadUI("LogIn");
+        App.setRoot("LogIn");
     }
 
     private void loadUI(String ui)
