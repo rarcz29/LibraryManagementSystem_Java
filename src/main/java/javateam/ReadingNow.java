@@ -30,11 +30,15 @@ public class ReadingNow implements Container{
 
         @Override
         public boolean hasNext() {
-            return index < readingNowData.size();
+            if (index < readingNowData.size()) return true;
+            index--;
+            return false;
         }
 
         public boolean hasPrevious() {
-            return index > 0;
+            if (index >= 0) return true;
+            index++;
+            return false;
         }
 
         @Override
@@ -43,15 +47,15 @@ public class ReadingNow implements Container{
                 indexPrevious = index;
                 return readingNowData.get(index++);
             }
-            return null;
+            return readingNowData.get(indexPrevious);
         }
 
         public Object previous() {
-            if(this.hasNext()){
+            if(this.hasPrevious()){
                 indexPrevious = index;
                 return readingNowData.get(index--);
             }
-            return null;
+            return readingNowData.get(indexPrevious);
         }
 
         public Vector<?> confirm() {
