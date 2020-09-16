@@ -22,7 +22,7 @@
                   </Label>
                   <ImageView fitHeight="85.0" fitWidth="73.0" layoutX="34.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../book-stack-128.png" />
+                        <Image url="@../Img/book-stack-128.png" />
                      </image>
                   </ImageView>
                </children>
