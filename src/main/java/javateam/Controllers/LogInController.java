@@ -20,11 +20,8 @@ public class LogInController
 {
     private Login loginModel = new Login();
 
-    @FXML
-    private TextField usernameTextField;
-
-    @FXML
-    private PasswordField passwordField;
+    @FXML private TextField usernameTextField;
+    @FXML private PasswordField passwordField;
 
     @FXML
     public void SignUpButtonOnAction() throws IOException
