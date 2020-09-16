@@ -5,17 +5,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javateam.App;
+import javateam.Models.Login;
 
-public class LogInController {
+public class LogInController
+{
+    private Login loginModel = new Login();
+
     @FXML
-    private VBox loginVBox;
+    private TextField usernameTextField;
+
+    @FXML
+    private PasswordField passwordField;
 
     @FXML
     public void SignUpButtonOnAction() throws IOException
@@ -23,9 +32,19 @@ public class LogInController {
         App.setRoot("SignUp");
     }
 
-    public void LogInButtonAction(ActionEvent actionEvent) {
+    @FXML
+    public void LogInButtonAction(ActionEvent actionEvent) throws IOException
+    {
+        String username = usernameTextField.getText();
+        String password = passwordField.getText();
 
+        if (loginModel.logMethod(username, password))
+        {
+            App.setRoot("Menu");
+        }
+        else
+        {
+            System.out.println("Nie działa");
+        }
     }
-
-
 }
