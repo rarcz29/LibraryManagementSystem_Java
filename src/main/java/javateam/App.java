@@ -14,13 +14,12 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("SignUp"));
+        scene = new Scene(loadFXML("LogIn"));
         stage.setScene(scene);
         stage.show();
         stage.setHeight(520);
         stage.setWidth(720);
         stage.setResizable(false);
-
     }
 
     public static void setRoot(String fxml) throws IOException {
