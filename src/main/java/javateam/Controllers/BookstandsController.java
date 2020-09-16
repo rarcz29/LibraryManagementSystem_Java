@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.collections.ObservableList;
 
@@ -22,10 +23,7 @@ public class BookstandsController
     @FXML
     public void initialize()
     {
-        model.GetBookstands();
-/*
-        if (true)
-            return;
+        ObservableList<Bookstands.TableProduct> tableValues = model.GetBookstands();
 
         bookstandId.setCellValueFactory(
                 new PropertyValueFactory<Bookstands.TableProduct, String>("bookstandId")
@@ -34,12 +32,10 @@ public class BookstandsController
                 new PropertyValueFactory<Bookstands.TableProduct, String>("description")
         );
         select.setCellValueFactory(
-                new PropertyValueFactory<Bookstands.TableProduct, String>("checkbox")
+                new PropertyValueFactory<Bookstands.TableProduct, CheckBox>("checkbox")
         );
 
         table.setItems(tableValues);
-        */
-
     }
 
     @FXML
@@ -48,5 +44,11 @@ public class BookstandsController
         String description = descriptionTextField.getText();
         model.AddBookstand(description);
         descriptionTextField.setText("");
+    }
+
+    @FXML
+    public void RemoveSelectedBookstands()
+    {
+        model.RemoveSelectedBookstands();
     }
 }

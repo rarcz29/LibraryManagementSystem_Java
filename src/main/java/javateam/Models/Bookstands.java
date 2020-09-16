@@ -9,6 +9,7 @@ import javafx.scene.control.CheckBox;
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.AddBookstand;
 import javateam.Data.db_strategy.ShowBookstand;
+import javateam.Data.db_strategy.DelBookstand;
 
 public class Bookstands
 {
@@ -20,10 +21,12 @@ public class Bookstands
         {
             Operation operation = new AddBookstand();
             operation.doOperation(description);
+
+            data.add(new TableProduct("9999", description));
         }
     }
 
-    public void GetBookstands()
+    public ObservableList<TableProduct> GetBookstands()
     {
         data = FXCollections.observableArrayList();
 
@@ -33,16 +36,29 @@ public class Bookstands
         for (int i = 1; i < result.size(); i++)
         {
             String[] arr = (String[])result.get(i);
-            //data.add(new TableProduct(arr[0], arr[1]));
-
-            System.out.println(arr[0]);
-            //System.out.println(arr[]);
+            data.add(new TableProduct(arr[0], arr[1]));
         }
 
-        //return data;
+        return data;
     }
 
-    //public void RemoveBookstands()
+    public void RemoveSelectedBookstands()
+    {
+        ObservableList<TableProduct> dataListRemove = FXCollections.observableArrayList();
+
+        for (TableProduct entity : data)
+        {
+            if (entity.getCheckbox().isSelected())
+            {
+                dataListRemove.add(entity);
+
+                Operation operation = new DelBookstand();
+                operation.doOperation(entity.bookstandId.get());
+            }
+        }
+
+        data.removeAll(dataListRemove);
+    }
 
     public class TableProduct
     {
@@ -55,6 +71,21 @@ public class Bookstands
             this.bookstandId = new SimpleStringProperty(id);
             this.description = new SimpleStringProperty(description);
             this.checkbox = new CheckBox();
+        }
+
+        public String getBookstandId()
+        {
+            return bookstandId.get();
+        }
+
+        public String getDescription()
+        {
+            return description.get();
+        }
+
+        public CheckBox getCheckbox()
+        {
+            return checkbox;
         }
     }
 }
