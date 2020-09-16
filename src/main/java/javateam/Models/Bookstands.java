@@ -23,9 +23,9 @@ public class Bookstands
         }
     }
 
-    public ObservableList<TableProduct> GetBookstands()
+    public void GetBookstands()
     {
-        data.clear();
+        data = FXCollections.observableArrayList();
 
         Operation operation = new ShowBookstand();
         var result = operation.doOperation();
@@ -33,10 +33,13 @@ public class Bookstands
         for (int i = 1; i < result.size(); i++)
         {
             String[] arr = (String[])result.get(i);
-            data.add(new TableProduct(arr[0], arr[1]));
+            //data.add(new TableProduct(arr[0], arr[1]));
+
+            System.out.println(arr[0]);
+            //System.out.println(arr[]);
         }
 
-        return data;
+        //return data;
     }
 
     //public void RemoveBookstands()

@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.collections.ObservableList;
 
 import javateam.Models.Bookstands;
 
@@ -21,8 +22,10 @@ public class BookstandsController
     @FXML
     public void initialize()
     {
-        /*
-        var tableValues = model.GetBookstands();
+        model.GetBookstands();
+/*
+        if (true)
+            return;
 
         bookstandId.setCellValueFactory(
                 new PropertyValueFactory<Bookstands.TableProduct, String>("bookstandId")
@@ -34,9 +37,9 @@ public class BookstandsController
                 new PropertyValueFactory<Bookstands.TableProduct, String>("checkbox")
         );
 
-         */
+        table.setItems(tableValues);
+        */
 
-        //table.setItems(tableValues);
     }
 
     @FXML
@@ -44,5 +47,6 @@ public class BookstandsController
     {
         String description = descriptionTextField.getText();
         model.AddBookstand(description);
+        descriptionTextField.setText("");
     }
 }
