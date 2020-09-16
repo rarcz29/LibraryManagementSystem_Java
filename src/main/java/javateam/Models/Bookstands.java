@@ -4,6 +4,7 @@ import java.util.Vector;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.CheckBox;
 
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.AddBookstand;
@@ -15,8 +16,11 @@ public class Bookstands
 
     public void AddBookstand(String description)
     {
-        Operation operation = new AddBookstand();
-        operation.doOperation(description);
+        if (description.length() > 0)
+        {
+            Operation operation = new AddBookstand();
+            operation.doOperation(description);
+        }
     }
 
     public ObservableList<TableProduct> GetBookstands()
@@ -29,7 +33,7 @@ public class Bookstands
         for (int i = 1; i < result.size(); i++)
         {
             String[] arr = (String[])result.get(i);
-            data.add(new TableProduct(arr[0], arr[1]))
+            data.add(new TableProduct(arr[0], arr[1]));
         }
 
         return data;
@@ -37,7 +41,7 @@ public class Bookstands
 
     //public void RemoveBookstands()
 
-    public class TableProduct()
+    public class TableProduct
     {
         private final SimpleStringProperty bookstandId;
         private final SimpleStringProperty description;
