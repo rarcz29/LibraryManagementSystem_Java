@@ -2,7 +2,7 @@ package javateam;
 
 public class User
 {
-    // instance of the singleton
+    // instance of the singletona
     private static User instance = null;
     // object to synchronization (thread safety)
     private static Object mutex = new Object();
