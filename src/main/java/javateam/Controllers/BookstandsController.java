@@ -44,7 +44,7 @@ public class BookstandsController
         String description = descriptionTextField.getText();
         model.AddBookstand(description);
         descriptionTextField.setText("");
-        model.GetBookstands()
+        model.GetBookstands();
     }
 
     @FXML

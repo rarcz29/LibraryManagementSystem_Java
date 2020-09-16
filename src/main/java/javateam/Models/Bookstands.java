@@ -21,14 +21,15 @@ public class Bookstands
         {
             Operation operation = new AddBookstand();
             operation.doOperation(description);
-
-            data.add(new TableProduct("9999", description));
         }
     }
 
     public ObservableList<TableProduct> GetBookstands()
     {
-        data = FXCollections.observableArrayList();
+        if (data == null)
+            data = FXCollections.observableArrayList();
+
+        else data.clear();
 
         Operation operation = new ShowBookstand();
         var result = operation.doOperation();

@@ -31,9 +31,6 @@ public class SignUpController
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
-        System.out.println(password);
-        System.out.println(confirmPassword);
-
         if (!password.equals(confirmPassword) || !model.regMethod(username, password))
         {
             String msg = "Try again.";
