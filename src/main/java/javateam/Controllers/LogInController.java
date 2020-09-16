@@ -44,7 +44,12 @@ public class LogInController
         }
         else
         {
-            System.out.println("Nie działa");
+            String msg = "Wrong login or password.";
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText(msg);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.showAndWait();
         }
     }
 }
