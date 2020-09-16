@@ -19,19 +19,19 @@
             <Font name="Antonio Regular" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameTextField" onAction="#SignUpButtonAction" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Username">
+      <TextField fx:id="usernameTextField" onAction="#SignUpButtonOnAction" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Username">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin></TextField>
-      <PasswordField fx:id="passwordField" onAction="#SignUpButtonAction" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Password">
+      <PasswordField fx:id="passwordField" onAction="#SignUpButtonOnAction" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Password">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin></PasswordField>
-      <PasswordField fx:id="confirmPasswordField" onAction="#SignUpButtonAction" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Confirm password">
+      <PasswordField fx:id="confirmPasswordField" onAction="#SignUpButtonOnAction" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Confirm password">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin></PasswordField>
-       <Button onAction="#SignUpButtonAction" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Sign up" GridPane.columnIndex="1">
+       <Button onAction="#SignUpButtonOnAction" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Sign up" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>
@@ -41,7 +41,7 @@
            <VBox.margin>
                <Insets top="50.0" />
            </VBox.margin></Button>
-       <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Log in" GridPane.columnIndex="1">
+       <Button onAction="#GoBackButtonOnAction" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Log in" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>

@@ -24,7 +24,7 @@ public class LogInController
     @FXML private PasswordField passwordField;
 
     @FXML
-    public void SignUpButtonOnAction() throws IOException
+    public void SignUpButtonOnAction(ActionEvent actionEvent) throws IOException
     {
         App.setRoot("SignUp");
     }
