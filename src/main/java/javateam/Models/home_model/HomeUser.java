@@ -25,7 +25,7 @@ public class HomeUser extends Home
                 dataList.add(entity);
 
                 Operation operation = new AddToList();
-                operation.doOperation(User.getInstance().getUserIdAsString(), entity.getId());
+                var result = operation.doOperation(User.getInstance().getUserIdAsString(), entity.getId());
             }
         }
 
