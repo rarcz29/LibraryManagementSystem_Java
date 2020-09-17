@@ -3,6 +3,10 @@ package javateam.Models.home_model;
 import java.util.Vector;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Alert;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.CheckBox;
+
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.DelBook;
 import javateam.Data.db_strategy.AddBookstand;
@@ -26,5 +30,24 @@ public class HomeAdmin extends Home
     {
         Operation operation = new DelBook();
         operation.doOperation(bookId);
+    }
+
+    @Override
+    public void removeSelectedBooks()
+    {
+        ObservableList<TableProduct> dataListRemove = FXCollections.observableArrayList();
+
+        for (TableProduct entity : data)
+        {
+            if (entity.getCheckbox().isSelected())
+            {
+                dataListRemove.add(entity);
+
+                Operation operation = new DelBook();
+                operation.doOperation(entity.getId());
+            }
+        }
+
+        data.removeAll(dataListRemove);
     }
 }

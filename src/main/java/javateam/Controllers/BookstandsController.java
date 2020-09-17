@@ -6,9 +6,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
 import javafx.collections.ObservableList;
 
 import javateam.Models.Bookstands;
+import javateam.User;
 
 public class BookstandsController
 {
@@ -50,6 +53,17 @@ public class BookstandsController
     @FXML
     public void RemoveSelectedBookstands()
     {
-        model.RemoveSelectedBookstands();
+        if (User.getInstance().getIsAdmin())
+            model.RemoveSelectedBookstands();
+
+        else
+        {
+            String msg = "Log in as an admin to remove bookstands.";
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText(msg);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        }
     }
 }

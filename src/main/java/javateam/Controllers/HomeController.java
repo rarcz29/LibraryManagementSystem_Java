@@ -7,6 +7,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
 
 import javateam.Models.home_model.*;
 import javateam.User;
@@ -71,7 +73,56 @@ public class HomeController
         String genre = genreTextField.getText();
         String bookstandId = bookstandIdTextField.getText();
 
+        if (bookstandId.length() == 0)
+        {
+            String msg = "Please enter Bookstand ID";
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText(msg);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+
+            return;
+        }
+
         model.addBook(title, author, genre, "", bookstandId);
         model.search("", "");
+        clearTextFields();
+    }
+
+    @FXML
+    public void searchButtonOnAction()
+    {
+        String title = titleTextField.getText();
+        String author = authorTextField.getText();
+        String genre = genreTextField.getText();
+        String bookstandId = bookstandIdTextField.getText();
+
+        if (genre.length() > 0 || bookstandId.length() > 0)
+        {
+            String msg = "You can search only by title and author.";
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText(msg);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        }
+
+        model.search(title, author);
+        clearTextFields();
+    }
+
+    public void removeBooksOnAction()
+    {
+        model.removeSelectedBooks();
+        model.search("", "");
+    }
+
+    private void clearTextFields()
+    {
+        titleTextField.setText("");
+        authorTextField.setText("");
+        genreTextField.setText("");
+        bookstandIdTextField.setText("");
     }
 }

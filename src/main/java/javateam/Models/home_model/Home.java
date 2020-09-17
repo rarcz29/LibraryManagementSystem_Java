@@ -11,10 +11,11 @@ import javafx.scene.control.Alert;
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.Search;
 import javateam.Data.db_strategy.AddBook;
+import javateam.Data.db_strategy.DelBook;
 
 public abstract class Home
 {
-    ObservableList<TableProduct> data;
+    protected ObservableList<TableProduct> data;
 
     /*public Vector<?> search(String title, String author)
     {
@@ -85,6 +86,7 @@ public abstract class Home
 
     public abstract void addToMyList(String userId, String bookId);
     public abstract void removeBook(String bookId);
+    public abstract void removeSelectedBooks();
 
     public class TableProduct
     {

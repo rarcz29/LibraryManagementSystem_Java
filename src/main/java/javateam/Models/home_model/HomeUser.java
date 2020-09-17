@@ -16,7 +16,10 @@ public class HomeUser extends Home
     }
 
     @Override
-    public void removeBook(String bookId)
+    public void removeBook(String bookId) { cannotProceedInfo(); }
+
+    @Override
+    public void removeSelectedBooks()
     {
         cannotProceedInfo();
     }

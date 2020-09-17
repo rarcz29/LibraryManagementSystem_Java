@@ -30,11 +30,11 @@
                 <Insets left="40.0" />
              </GridPane.margin>
           </TextField>
-          <TextField fx:id="genreTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Genre" GridPane.columnIndex="1">
+          <TextField fx:id="genreTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addBookButtonOnAction" prefHeight="25.0" prefWidth="210.0" promptText="Genre" GridPane.columnIndex="1">
              <GridPane.margin>
                 <Insets />
              </GridPane.margin></TextField>
-          <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Search" GridPane.rowIndex="2">
+          <Button mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Search" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="140.0" />
                </GridPane.margin>
@@ -52,7 +52,7 @@
                <GridPane.margin>
                   <Insets left="40.0" />
                </GridPane.margin></TextField>
-            <TextField fx:id="bookstandIdTextField" layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="bookstandIdTextField" layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addBookButtonOnAction" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
        </children>
     </GridPane>
     <TableView fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="255.0" prefWidth="560.0">
@@ -80,7 +80,7 @@
                <font>
                   <Font name="Antonio Regular" size="14.0" />
                </font></Button>
-          <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Remove books" GridPane.columnIndex="1">
+          <Button mnemonicParsing="false" onAction="#removeBooksOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Remove books" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
