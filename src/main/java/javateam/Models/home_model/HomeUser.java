@@ -9,13 +9,6 @@ import javateam.Data.db_strategy.AddToList;
 public class HomeUser extends Home
 {
     @Override
-    public void addBook(String title, String author, String type,
-                        String description, String bookstandId)
-    {
-        cannotProceedInfo();
-    }
-
-    @Override
     public void addToMyList(String userId, String bookId)
     {
         Operation operation = new AddToList();
