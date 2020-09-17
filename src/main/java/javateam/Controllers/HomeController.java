@@ -115,7 +115,18 @@ public class HomeController
     @FXML
     public void addToMyListButtonOnAction()
     {
-        model.addSelectedToMyList();
+        String msg;
+
+        if (model.addSelectedToMyList())
+            msg = "Books added to the list.";
+
+        else msg = "There is a problem with adding books to the list.";
+
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setContentText(msg);
+        alert.setTitle("Alert");
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 
     @FXML

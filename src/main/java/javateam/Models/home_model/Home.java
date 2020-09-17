@@ -84,7 +84,7 @@ public abstract class Home
         }
     }
 
-    public abstract void addSelectedToMyList();
+    public abstract boolean addSelectedToMyList();
     public abstract void removeSelectedBooks();
 
     public class TableProduct

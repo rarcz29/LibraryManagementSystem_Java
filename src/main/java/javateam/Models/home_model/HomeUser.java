@@ -14,7 +14,7 @@ import javateam.Data.db_strategy.AddToList;
 public class HomeUser extends Home
 {
     @Override
-    public void addSelectedToMyList()
+    public boolean addSelectedToMyList()
     {
         ObservableList<TableProduct> dataList = FXCollections.observableArrayList();
 
@@ -28,6 +28,8 @@ public class HomeUser extends Home
                 operation.doOperation(User.getInstance().getUserIdAsString(), entity.getId());
             }
         }
+
+        return true;
     }
 
     @Override

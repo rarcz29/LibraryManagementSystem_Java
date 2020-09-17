@@ -14,7 +14,7 @@ import javateam.Data.db_strategy.AddBookstand;
 public class HomeAdmin extends Home
 {
     @Override
-    public void addSelectedToMyList()
+    public boolean addSelectedToMyList()
     {
         String msg = "Admin cannot execute that operation.\n" +
                 "Log in to your account, or create a new one.";
@@ -23,6 +23,8 @@ public class HomeAdmin extends Home
         alert.setTitle("Alert");
         alert.setHeaderText(null);
         alert.showAndWait();
+
+        return false
     }
 
     @Override
