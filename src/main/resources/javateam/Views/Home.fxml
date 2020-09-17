@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="470.0" prefWidth="560.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="470.0" prefWidth="560.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javateam.Controllers.HomeController">
  <children>
     <Label prefHeight="60.0" prefWidth="560.0" style="-fx-background-color: #47F3D3;" text="Home">
        <font>
@@ -25,12 +25,12 @@
           <RowConstraints maxHeight="172.00000381469727" minHeight="10.0" prefHeight="50.00000762939453" vgrow="SOMETIMES" />
       </rowConstraints>
        <children>
-          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand" GridPane.rowIndex="1">
+          <TextField fx:id="authorTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Author" GridPane.rowIndex="1">
              <GridPane.margin>
                 <Insets left="40.0" />
              </GridPane.margin>
           </TextField>
-          <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Author" GridPane.columnIndex="1">
+          <TextField fx:id="genreTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Genre" GridPane.columnIndex="1">
              <GridPane.margin>
                 <Insets />
              </GridPane.margin></TextField>
@@ -41,18 +41,18 @@
                <font>
                   <Font name="Antonio Regular" size="14.0" />
                </font></Button>
-          <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Add book" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <Button mnemonicParsing="false" onAction="#addBookButtonOnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Add book" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="20.0" />
                </GridPane.margin>
                <font>
                   <Font name="Antonio Regular" size="14.0" />
                </font></Button>
-            <TextField layoutX="69.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Title">
+            <TextField fx:id="titleTextField" layoutX="69.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Title">
                <GridPane.margin>
                   <Insets left="40.0" />
                </GridPane.margin></TextField>
-            <TextField layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Type" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="bookstandIdTextField" layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
        </children>
     </GridPane>
     <TableView maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="255.0" prefWidth="560.0">
