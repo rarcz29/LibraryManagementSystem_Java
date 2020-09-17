@@ -55,13 +55,13 @@
             <TextField fx:id="bookstandIdTextField" layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
        </children>
     </GridPane>
-    <TableView maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="255.0" prefWidth="560.0">
+    <TableView fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="255.0" prefWidth="560.0">
       <columns>
-        <TableColumn prefWidth="211.9999796152115" text="Title" />
-        <TableColumn prefWidth="141.3333282470703" text="Author" />
-          <TableColumn minWidth="0.0" prefWidth="60.33331298828125" text="Type" />
-          <TableColumn prefWidth="98.66665649414062" text="id_bookstand" />
-            <TableColumn minWidth="0.0" prefWidth="48.999969482421875" text="select" />
+        <TableColumn fx:id="titleColumn" prefWidth="211.9999796152115" text="Title" />
+        <TableColumn fx:id="authorColumn" prefWidth="141.3333282470703" text="Author" />
+          <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="60.33331298828125" text="Type" />
+          <TableColumn fx:id="bookstandIdColumn" prefWidth="98.66665649414062" text="id_bookstand" />
+            <TableColumn fx:id="selectColumn" minWidth="0.0" prefWidth="48.999969482421875" text="select" />
       </columns>
     </TableView>
     <GridPane prefHeight="47.0" prefWidth="559.0">
