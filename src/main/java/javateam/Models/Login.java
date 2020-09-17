@@ -17,7 +17,7 @@ public class Login {
             String[] tab = (String[])found.get(1);
 
             int id_user = Integer.parseInt(tab[0]);
-            boolean is_admin = Boolean.parseBoolean(tab[2]);
+            boolean is_admin = tab[2].equals("1") ? true : false;
 
             user.setData(login, id_user, is_admin);
             return true;
