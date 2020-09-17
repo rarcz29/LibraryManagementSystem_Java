@@ -24,7 +24,7 @@ public class HomeAdmin extends Home
         alert.setHeaderText(null);
         alert.showAndWait();
 
-        return false
+        return false;
     }
 
     @Override
