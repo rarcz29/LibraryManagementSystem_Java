@@ -61,7 +61,8 @@ public class DataSqliteController {
                 "\"id_book\"INTEGER NOT NULL,\n" +
                 "\"status\"INTEGER NOT NULL DEFAULT 0,\n" +
                 "FOREIGN KEY(\"id_user\") REFERENCES \"user\"(\"id_user\"),\n" +
-                "FOREIGN KEY(\"id_book\") REFERENCES \"book\"(\"id_book\")\n" +
+                "FOREIGN KEY(\"id_book\") REFERENCES \"book\"(\"id_book\"),\n" +
+                "UNIQUE(id_user,id_book)\n" +
                 ");";
         generate_sql[2] = "CREATE TABLE IF NOT EXISTS \"user\" (\n" +
                 "\"id_user\"INTEGER NOT NULL,\n" +
