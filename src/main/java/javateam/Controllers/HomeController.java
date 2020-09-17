@@ -112,6 +112,13 @@ public class HomeController
         clearTextFields();
     }
 
+    @FXML
+    public void addToMyListButtonOnAction()
+    {
+        model.addSelectedToMyList();
+    }
+
+    @FXML
     public void removeBooksOnAction()
     {
         model.removeSelectedBooks();

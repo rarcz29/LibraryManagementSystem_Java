@@ -84,8 +84,7 @@ public abstract class Home
         }
     }
 
-    public abstract void addToMyList(String userId, String bookId);
-    public abstract void removeBook(String bookId);
+    public abstract void addSelectedToMyList();
     public abstract void removeSelectedBooks();
 
     public class TableProduct

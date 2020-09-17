@@ -3,20 +3,32 @@ package javateam.Models.home_model;
 import java.util.Vector;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Alert;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.CheckBox;
+
+import javateam.User;
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.AddToList;
 
 public class HomeUser extends Home
 {
     @Override
-    public void addToMyList(String userId, String bookId)
+    public void addSelectedToMyList()
     {
-        Operation operation = new AddToList();
-        operation.doOperation(userId, bookId);
-    }
+        ObservableList<TableProduct> dataList = FXCollections.observableArrayList();
 
-    @Override
-    public void removeBook(String bookId) { cannotProceedInfo(); }
+        for (TableProduct entity : data)
+        {
+            if (entity.getCheckbox().isSelected())
+            {
+                dataList.add(entity);
+
+                Operation operation = new AddToList();
+                operation.doOperation(User.getInstance().getUserIdAsString(), entity.getId());
+            }
+        }
+    }
 
     @Override
     public void removeSelectedBooks()

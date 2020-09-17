@@ -73,7 +73,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
        <children>
-          <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Add to my list">
+          <Button mnemonicParsing="false" onAction="#addToMyListButtonOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-color: #44b3af; -fx-border-radius: 10;" text="Add to my list">
                <GridPane.margin>
                   <Insets left="150.0" right="20.0" />
                </GridPane.margin>
