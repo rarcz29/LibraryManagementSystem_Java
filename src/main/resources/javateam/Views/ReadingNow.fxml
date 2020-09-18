@@ -20,7 +20,7 @@
             <Font name="Antonio Regular" size="22.0" />
          </font>
       </Label>
-       <Button focusTraversable="false" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Remove books" GridPane.columnIndex="1">
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#returnBookButtonOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Raturn book" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>

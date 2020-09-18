@@ -34,27 +34,30 @@ public class ReadingNowController
     }
 
     @FXML
+    public void returnBookButtonOnAction()
+    {
+
+    }
+
+    @FXML
     public void nextButtonOnAction()
     {
-        if (iterator.hasNext())
-        {
-            String[] arr = ((String[])iterator.next());
-            String title = arr[2];
-            String author = arr[3];
-            String value = String.valueOf(getSecondLabelText(title, author));
-            secondLabel.setText(value);
-        }
-        else
+        String[] arr;
+
+        if (!iterator.hasNext())
         {
             while (iterator.hasPrevious())
                 iterator.previous();
 
-            String[] arr = ((String[])iterator.previous());
-            String title = arr[2];
-            String author = arr[3];
-            String value = String.valueOf(getSecondLabelText(title, author));
-            secondLabel.setText(value);
+            arr = ((String[])iterator.previous());
         }
+
+        else arr = ((String[])iterator.next());
+
+        String title = arr[2];
+        String author = arr[3];
+        String value = String.valueOf(getSecondLabelText(title, author));
+        secondLabel.setText(value);
     }
 
     @FXML
