@@ -5,6 +5,7 @@ import javateam.Data.db_strategy.DelFromList;
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.ShowList;
 import javateam.Data.db_strategy.GetCurrentReading;
+import javateam.Data.db_strategy.DelCurrentReadingBook;
 import javateam.User;
 
 import java.util.Iterator;
@@ -90,12 +91,16 @@ public class ReadingNow implements Container{
 
         public boolean delete() {
             boolean result;
-            Operation currentbook = new DelFromList();
+            Operation operation = new DelCurrentReadingBook();
             String idUser = User.getInstance().getUserIdAsString();
 
             if(index < readingNowData.size() && index >= 0) {
                 String idBook = String.valueOf(((String[])readingNowData.get(index))[0]);
-                result = (Vector<Boolean>)currentbook.doOperation(idUser, idBook).get(0);
+                result = ((Vector<Boolean>)operation.doOperation(idUser)).get(0);
+
+                Operation getData = new ShowList();
+                readingNowData = getData.doOperation(userId);
+                readingNowData.remove(0);
             }
             else {
                 result = false;
