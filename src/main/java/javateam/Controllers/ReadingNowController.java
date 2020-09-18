@@ -24,11 +24,10 @@ public class ReadingNowController
             return;
         }
 
-        //iterator.next();
         String[] arr = ((String[])iterator.next());
         String title = arr[2];
         String author = arr[3];
-        String value = String.valueOf("Select:\n \"" + title + "\" " + author);
+        String value = String.valueOf(getSecondLabelText(title, author));
         secondLabel.setText(value);
     }
 
@@ -40,7 +39,7 @@ public class ReadingNowController
             String[] arr = ((String[])iterator.next());
             String title = arr[2];
             String author = arr[3];
-            String value = String.valueOf("Select:\n \"" + title + "\" " + author);
+            String value = String.valueOf(getSecondLabelText(title, author));
             secondLabel.setText(value);
         }
         else
@@ -51,8 +50,13 @@ public class ReadingNowController
             String[] arr = ((String[])iterator.previous());
             String title = arr[2];
             String author = arr[3];
-            String value = String.valueOf("Select:\n \"" + title + "\" " + author);
+            String value = String.valueOf(getSecondLabelText(title, author));
             secondLabel.setText(value);
         }
+    }
+
+    private String getSecondLabelText(String title, String author)
+    {
+        return "Select:\n\"" + title + "\" " + author;
     }
 }
