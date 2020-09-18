@@ -89,17 +89,16 @@ public class ReadingNow implements Container{
         }
 
         public Vector<?> delete() {
-            Vector<Boolean> result;
+            boolean result;
             Operation currentbook = new DelFromList();
             String idUser = User.getInstance().getUserIdAsString();
 
             if(index < readingNowData.size() && index >= 0) {
                 String idBook = String.valueOf(((String[])readingNowData.get(index))[0]);
-                result = (Vector<Boolean>) currentbook.doOperation(idUser, idBook);
+                result = (Vector<Boolean>)currentbook.doOperation(idUser, idBook).get(0);
             }
             else {
-                result = new Vector<>();
-                result.add(false);
+                result = false;
             }
             return result;
         }
