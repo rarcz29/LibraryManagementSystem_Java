@@ -36,24 +36,23 @@ public class ReadingNowController
     @FXML
     public void returnBookButtonOnAction()
     {
-        if (!iterator.hasPrevious() && !iterator.hasNext())
-        {
-            if (iterator.delete())
-                secondLabel.setText("The list is empty.");
+        boolean result = iterator.delete();
 
-            return;
-        }
-
-        iterator.delete();
+        if (!result)
+            secondLabel.setText("The list is empty.");
 
         while (iterator.hasPrevious())
             iterator.previous();
 
-        String[] arr = ((String[])iterator.previous());
-        String title = arr[2];
-        String author = arr[3];
-        String value = String.valueOf(getSecondLabelText(title, author));
-        secondLabel.setText(value);
+        if (result)
+        {
+            String[] arr = ((String[])iterator.previous());
+            String title = arr[2];
+            String author = arr[3];
+            String value = String.valueOf(getSecondLabelText(title, author));
+            secondLabel.setText(value);
+        }
+
         mainLabel.setText("Nothing");
     }
 

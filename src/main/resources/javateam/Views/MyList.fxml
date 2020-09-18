@@ -18,10 +18,10 @@
        <TableView fx:id="table" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="347.0" prefWidth="560.0">
            <columns>
                <TableColumn fx:id="titleColumn" prefWidth="211.9999796152115" text="Title" />
-               <TableColumn fx:id="authorColumn" prefWidth="141.3333282470703" text="Author" />
-               <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="60.33331298828125" text="Type" />
-               <TableColumn fx:id="bookstandIdColumn" prefWidth="98.66665649414062" text="id_bookstand" />
-               <TableColumn fx:id="selectColumn" minWidth="0.0" prefWidth="48.999969482421875" text="select" />
+               <TableColumn fx:id="authorColumn" prefWidth="150.0" text="Author" />
+               <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="90.0" text="Genre" />
+               <TableColumn fx:id="bookstandIdColumn" prefWidth="70.0" text="id_bookstand" />
+               <TableColumn fx:id="selectColumn" minWidth="0.0" prefWidth="35.0" resizable="false" sortable="false" text="select" />
            </columns>
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" />

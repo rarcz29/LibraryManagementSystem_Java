@@ -95,12 +95,14 @@ public class ReadingNow implements Container{
             String idUser = User.getInstance().getUserIdAsString();
 
             if(index < readingNowData.size() && index >= 0) {
-                String idBook = String.valueOf(((String[])readingNowData.get(index))[0]);
                 result = ((Vector<Boolean>)operation.doOperation(idUser)).get(0);
 
                 Operation getData = new ShowList();
                 readingNowData = getData.doOperation(userId);
                 readingNowData.remove(0);
+
+                if (readingNowData.size() < 1)
+                    result = false;
             }
             else {
                 result = false;
