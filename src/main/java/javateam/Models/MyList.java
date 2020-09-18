@@ -36,10 +36,28 @@ public class MyList
         return data;
     }
 
-    public void removeBookFromList(String userId, String bookId)
+    /*public void removeBookFromList(String userId, String bookId)
     {
         Operation operation = new DelFromList();
         operation.doOperation(userId, bookId);
+    }*/
+
+    public void removeSelectedBooks()
+    {
+        ObservableList<TableProduct> dataListRemove = FXCollections.observableArrayList();
+
+        for (TableProduct entity : data)
+        {
+            if (entity.getCheckbox().isSelected())
+            {
+                dataListRemove.add(entity);
+
+                Operation operation = new DelFromList();
+                operation.doOperation(User.getInstance().getUserIdAsString(), entity.id.get());
+            }
+        }
+
+        data.removeAll(dataListRemove);
     }
 
     public class TableProduct

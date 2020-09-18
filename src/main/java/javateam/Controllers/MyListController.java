@@ -43,4 +43,10 @@ public class MyListController
 
         table.setItems(tableValues);
     }
+
+    @FXML
+    public void removeBooksButtonOnAction()
+    {
+        model.removeSelectedBooks();
+    }
 }
