@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -19,19 +20,19 @@
             <Font name="Antonio Regular" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameTextField" onAction="#SignUpButtonOnAction" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Username">
+      <TextField fx:id="usernameTextField" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#SignUpButtonOnAction" prefHeight="25.0" prefWidth="192.0" promptText="Username">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin></TextField>
-      <PasswordField fx:id="passwordField" onAction="#SignUpButtonOnAction" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Password">
+      <PasswordField fx:id="passwordField" maxWidth="-Infinity" onAction="#SignUpButtonOnAction" prefHeight="25.0" prefWidth="192.0" promptText="Password">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin></PasswordField>
-      <PasswordField fx:id="confirmPasswordField" onAction="#SignUpButtonOnAction" maxWidth="-Infinity" prefHeight="25.0" prefWidth="192.0" promptText="Confirm password">
+      <PasswordField fx:id="confirmPasswordField" maxWidth="-Infinity" onAction="#SignUpButtonOnAction" prefHeight="25.0" prefWidth="192.0" promptText="Confirm password">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin></PasswordField>
-       <Button onAction="#SignUpButtonOnAction" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Sign up" GridPane.columnIndex="1">
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#SignUpButtonOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Sign up" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>
@@ -40,8 +41,11 @@
            </font>
            <VBox.margin>
                <Insets top="50.0" />
-           </VBox.margin></Button>
-       <Button onAction="#GoBackButtonOnAction" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Log in" GridPane.columnIndex="1">
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#GoBackButtonOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Log in" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>
@@ -50,6 +54,9 @@
            </font>
            <VBox.margin>
                <Insets top="20.0" />
-           </VBox.margin></Button>
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </VBox>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -14,11 +15,11 @@
            <padding>
                <Insets left="20.0" />
            </padding></Label>
-      <TextField fx:id="descriptionTextField" onAction="#AddBookstandButtonOnAction" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="332.0">
+      <TextField fx:id="descriptionTextField" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#AddBookstandButtonOnAction" prefHeight="25.0" prefWidth="332.0" promptText="Description">
          <VBox.margin>
             <Insets bottom="20.0" top="20.0" />
          </VBox.margin></TextField>
-       <Button onAction="#AddBookstandButtonOnAction" mnemonicParsing="false" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Add bookstand" GridPane.columnIndex="1">
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#AddBookstandButtonOnAction" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Add bookstand" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>
@@ -27,15 +28,18 @@
            </font>
            <VBox.margin>
                <Insets bottom="20.0" />
-           </VBox.margin></Button>
-      <TableView fx:id="table" prefHeight="234.0" prefWidth="560.0">
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TableView fx:id="table" focusTraversable="false" prefHeight="234.0" prefWidth="560.0">
         <columns>
           <TableColumn fx:id="bookstandId" prefWidth="100.66665649414062" text="Bookstand id" />
           <TableColumn fx:id="description" prefWidth="397.33331298828125" text="Description" />
             <TableColumn fx:id="select" prefWidth="61.3333740234375" text="select" />
         </columns>
       </TableView>
-       <Button onAction="#RemoveSelectedBookstands" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Remove bookstand" GridPane.columnIndex="1">
+       <Button alignment="TOP_CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#RemoveSelectedBookstands" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: #47F3D3; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #44b3af;" text="Remove bookstand" GridPane.columnIndex="1">
            <GridPane.margin>
                <Insets left="20.0" />
            </GridPane.margin>
@@ -44,6 +48,9 @@
            </font>
            <VBox.margin>
                <Insets top="20.0" />
-           </VBox.margin></Button>
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </VBox>
