@@ -57,6 +57,6 @@ public class ReadingNowController
 
     private String getSecondLabelText(String title, String author)
     {
-        return "Select:\n\"" + title + "\" " + author;
+        return "Select:\n\"" + title + "\"\n" + author;
     }
 }

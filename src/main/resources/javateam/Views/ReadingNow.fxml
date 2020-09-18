@@ -34,7 +34,7 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Pane prefHeight="18.0" prefWidth="600.0" />
-      <Label fx:id="secondLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="153.0" prefWidth="560.0" text="Book's title" textAlignment="CENTER" textFill="#47f3d3" wrapText="true">
+      <Label fx:id="secondLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="153.0" prefWidth="560.0" text="Book's title" textAlignment="CENTER" textFill="#47f3d3">
          <font>
             <Font size="22.0" />
          </font>
