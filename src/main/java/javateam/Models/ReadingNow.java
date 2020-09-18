@@ -88,7 +88,7 @@ public class ReadingNow implements Container{
             return result;
         }
 
-        public Vector<?> delete() {
+        public boolean delete() {
             boolean result;
             Operation currentbook = new DelFromList();
             String idUser = User.getInstance().getUserIdAsString();
