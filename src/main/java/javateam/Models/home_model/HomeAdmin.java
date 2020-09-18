@@ -9,6 +9,7 @@ import javafx.scene.control.CheckBox;
 
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.DelBook;
+import javateam.Data.db_strategy.DelAllFromList;
 import javateam.Data.db_strategy.AddBookstand;
 
 public class HomeAdmin extends Home
@@ -39,6 +40,9 @@ public class HomeAdmin extends Home
                 dataListRemove.add(entity);
 
                 Operation operation = new DelBook();
+                operation.doOperation(entity.getId());
+
+                operation = new DelAllFromList();
                 operation.doOperation(entity.getId());
             }
         }
