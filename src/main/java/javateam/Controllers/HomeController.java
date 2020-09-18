@@ -33,8 +33,6 @@ public class HomeController
     {
         HomeFactory homeFactory = new HomeFactory();
 
-        System.out.println(User.getInstance().getIsAdmin());
-
         if (User.getInstance().getIsAdmin())
             model = homeFactory.create("admin");
 
