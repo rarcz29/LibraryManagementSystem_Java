@@ -4,6 +4,7 @@ import javateam.Data.db_strategy.CurrentReadingBook;
 import javateam.Data.db_strategy.DelFromList;
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.ShowList;
+import javateam.Data.db_strategy.GetCurrentReading;
 import javateam.User;
 
 import java.util.Iterator;
@@ -24,6 +25,20 @@ public class ReadingNow implements Container{
 
     public ReadingNowIterator getReadingNowIterator(){
         return new ReadingNowIterator();
+    }
+
+    public String getCurrentReadingBook()
+    {
+        Operation operation = new GetCurrentReading();
+        var result = operation.doOperation(User.getInstance().getUserIdAsString());
+
+        if (result.size() > 1)
+        {
+            String[] arr = (String[])result.get(1);
+            return "\"" + arr[0] + "\" by " + arr[1];
+        }
+
+        return "Notning";
     }
 
     public class ReadingNowIterator implements Iterator {
@@ -58,18 +73,17 @@ public class ReadingNow implements Container{
             return readingNowData.get(index);
         }
 
-        public Vector<?> confirm() {
-            Vector<Boolean> result;
+        public boolean confirm() {
+            boolean result;
             Operation currentbook = new CurrentReadingBook();
             String idUser = User.getInstance().getUserIdAsString();
 
             if(index < readingNowData.size() && index >= 0) {
                 String idBook = String.valueOf(((String[])readingNowData.get(index))[0]);
-                result = (Vector<Boolean>) currentbook.doOperation(idUser, idBook);
+                result = ((Vector<Boolean>)currentbook.doOperation(idUser, idBook)).get(0);
             }
             else {
-                result = new Vector<>();
-                result.add(false);
+                result = false;
             }
             return result;
         }

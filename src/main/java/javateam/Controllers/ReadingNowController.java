@@ -20,16 +20,17 @@ public class ReadingNowController
     {
         iterator = model.getReadingNowIterator();
 
-        if (!iterator.hasNext())
+        if (iterator.hasNext())
         {
-            return;
-        }
+            String[] arr = ((String[])iterator.next());
+            String title = arr[2];
+            String author = arr[3];
+            String value = String.valueOf(getSecondLabelText(title, author));
+            secondLabel.setText(value);
 
-        String[] arr = ((String[])iterator.next());
-        String title = arr[2];
-        String author = arr[3];
-        String value = String.valueOf(getSecondLabelText(title, author));
-        secondLabel.setText(value);
+            String str = model.getCurrentReadingBook();
+            mainLabel.setText(str);
+        }
     }
 
     @FXML
@@ -61,7 +62,8 @@ public class ReadingNowController
     {
         if (iterator.confirm())
         {
-
+            String str = model.getCurrentReadingBook();
+            mainLabel.setText(str);
         }
         else
         {
