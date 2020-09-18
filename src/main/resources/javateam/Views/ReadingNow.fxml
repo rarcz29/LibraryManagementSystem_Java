@@ -30,15 +30,15 @@
                <Insets />
            </VBox.margin></Button>
       <Pane prefHeight="18.0" prefWidth="600.0" />
-      <Label fx:id="secondLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="560.0" text="Book's title" textFill="#47f3d3">
+      <Label fx:id="secondLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="153.0" prefWidth="560.0" text="Book's title" textAlignment="CENTER" textFill="#47f3d3" wrapText="true">
          <font>
-            <Font name="Antonio Regular" size="52.0" />
+            <Font size="22.0" />
          </font>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets />
          </VBox.margin>
       </Label>
-      <Pane prefHeight="56.0" prefWidth="600.0" />
+      <Pane prefHeight="22.0" prefWidth="560.0" />
       <GridPane alignment="TOP_CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
