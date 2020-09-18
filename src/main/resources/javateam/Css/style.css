@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Antonio';
+    src: url('../Fonts/Antonio-Regular.ttf');
+}
+
+* {
+    -fx-font-family: 'Antonio';
+}
+
+.label {
+    -fx-font-family: 'System';
+}
+
+.button-std {
+    -fx-background-color: #47F3D3;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #44b3af;
+    -fx-font-size: 14px;
+}
+
+.button-std:hover {
+    -fx-background-color: #00F0D0;
+}
+
+.button-menu {
+    -fx-background-color: #47F3D3;
+    -fx-font-size: 18px;
+}
+
+.button-menu:hover {
+    -fx-background-color: #00F0D0;
+}
