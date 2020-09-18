@@ -42,7 +42,7 @@ public class HomeController
     @FXML
     public void initialize()
     {
-        ObservableList<Home.TableProduct> tableValues = model.search("", "");
+        ObservableList<Home.TableProduct> tableValues = model.getBooks();
 
         titleColumn.setCellValueFactory(
                 new PropertyValueFactory<Home.TableProduct, String>("title")
@@ -84,7 +84,7 @@ public class HomeController
         }
 
         model.addBook(title, author, genre, "", bookstandId);
-        model.search("", "");
+        model.getBooks();
         clearTextFields();
     }
 
@@ -96,17 +96,7 @@ public class HomeController
         String genre = genreTextField.getText();
         String bookstandId = bookstandIdTextField.getText();
 
-        if (genre.length() > 0 || bookstandId.length() > 0)
-        {
-            String msg = "You can search only by title and author.";
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setContentText(msg);
-            alert.setTitle("Alert");
-            alert.setHeaderText(null);
-            alert.showAndWait();
-        }
-
-        model.search(title, author);
+        model.search(title, author, genre, bookstandId);
         clearTextFields();
     }
 
@@ -128,7 +118,7 @@ public class HomeController
     public void removeBooksOnAction()
     {
         model.removeSelectedBooks();
-        model.search("", "");
+        model.getBooks();
     }
 
     private void clearTextFields()

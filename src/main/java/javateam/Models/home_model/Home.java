@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 
 import javateam.Data.db_strategy.Operation;
 import javateam.Data.db_strategy.Search;
+import javateam.Data.db_strategy.ShowBooks;
 import javateam.Data.db_strategy.AddBook;
 import javateam.Data.db_strategy.DelBook;
 
@@ -17,25 +18,26 @@ public abstract class Home
 {
     protected ObservableList<TableProduct> data;
 
-    /*public Vector<?> search(String title, String author)
+    public ObservableList<TableProduct> getBooks()
     {
-        Operation operation = new Search();
-        var result = operation.doOperation(title, author);
-        int size = result.size() - 1;
+        if (data == null)
+            data = FXCollections.observableArrayList();
 
-        String msg = Integer.toString(size) + " books found.\n\n" +
-                "Tip: leave title and author fields empty\n" +
-                "\tto recive full list";
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setContentText(msg);
-        alert.setTitle(null);
-        alert.setHeaderText(null);
-        alert.showAndWait();
+        else data.clear();
 
-        return result;
-    }*/
+        Operation operation = new ShowBooks();
+        var result = operation.doOperation();
 
-    public ObservableList<TableProduct> search(String title, String author)
+        for (int i = 1; i < result.size(); i++)
+        {
+            String[] arr = (String[])result.get(i);
+            data.add(new TableProduct(arr[0], arr[2], arr[3], arr[5], arr[1]));
+        }
+
+        return data;
+    }
+
+    public ObservableList<TableProduct> search(String title, String author, String genre, String bookstandId)
     {
         if (data == null)
             data = FXCollections.observableArrayList();
@@ -43,17 +45,7 @@ public abstract class Home
         else data.clear();
 
         Operation operation = new Search();
-        var result = operation.doOperation(title, author);
-        //int size = result.size() - 1;
-
-        /*String msg = Integer.toString(size) + " books found.\n\n" +
-                "Tip: leave title and author fields empty\n" +
-                "\tto recive full list";
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setContentText(msg);
-        alert.setTitle(null);
-        alert.setHeaderText(null);
-        alert.showAndWait();*/
+        var result = operation.doOperation(title, author, genre, bookstandId);
 
         for (int i = 1; i < result.size(); i++)
         {

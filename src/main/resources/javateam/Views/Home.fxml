@@ -30,7 +30,7 @@
                 <Insets left="40.0" />
              </GridPane.margin>
           </TextField>
-          <TextField fx:id="genreTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addBookButtonOnAction" prefHeight="25.0" prefWidth="210.0" promptText="Genre" GridPane.columnIndex="1">
+          <TextField fx:id="genreTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Genre" GridPane.columnIndex="1">
              <GridPane.margin>
                 <Insets />
              </GridPane.margin></TextField>
@@ -52,7 +52,7 @@
                <GridPane.margin>
                   <Insets left="40.0" />
                </GridPane.margin></TextField>
-            <TextField fx:id="bookstandIdTextField" layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addBookButtonOnAction" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="bookstandIdTextField" layoutX="305.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Bookstand ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
        </children>
     </GridPane>
     <TableView fx:id="table" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="255.0" prefWidth="560.0">
