@@ -30,7 +30,7 @@ public class CurrentReadingBook implements Operation{
                 command = "UPDATE list SET status=1 WHERE id_user=" + id_user + " and id_book=" + id_book + ";";
                 result.add(database.data_command(command));
             } else {
-                System.out.println("Wybrany użytkownik lub książka");
+                //System.out.println("Wybrany użytkownik lub książka");
                 result.add(false);
             }
         }
