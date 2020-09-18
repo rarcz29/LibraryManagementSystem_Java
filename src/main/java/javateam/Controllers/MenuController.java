@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javateam.App;
+import javateam.User;
 
 public class MenuController
 {
@@ -23,6 +24,7 @@ public class MenuController
     @FXML
     public void initialize()
     {
+        App.setStageTitle("Home library | " + User.getInstance().getUsername());
         loadUI("Home");
     }
 
@@ -49,6 +51,7 @@ public class MenuController
     @FXML
     public void LogOutButtonOnAction() throws IOException
     {
+        App.setStageTitle("Home library");
         App.setRoot("LogIn");
     }
 

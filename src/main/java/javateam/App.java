@@ -10,20 +10,28 @@ import java.io.IOException;
 
 public class App extends Application {
 
+    private static Stage stage;
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("LogIn"));
-        stage.setScene(scene);
-        stage.show();
-        stage.setHeight(520);
-        stage.setWidth(720);
-        stage.setResizable(false);
+        this.stage = stage;
+        this.stage.setScene(scene);
+        this.stage.show();
+        this.stage.setHeight(520);
+        this.stage.setWidth(720);
+        this.stage.setResizable(false);
+        this.stage.setTitle("Home library");
     }
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+
+    public static void setStageTitle(String title)
+    {
+        stage.setTitle(title);
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
