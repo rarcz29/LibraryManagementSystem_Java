@@ -2,6 +2,8 @@ package javateam.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
 
 import javateam.Models.ReadingNow;
 
@@ -20,7 +22,6 @@ public class ReadingNowController
 
         if (!iterator.hasNext())
         {
-            secondLabel.setText("List is empty");
             return;
         }
 
@@ -52,6 +53,24 @@ public class ReadingNowController
             String author = arr[3];
             String value = String.valueOf(getSecondLabelText(title, author));
             secondLabel.setText(value);
+        }
+    }
+
+    @FXML
+    public void confirmButtonOnAction()
+    {
+        if (iterator.confirm())
+        {
+
+        }
+        else
+        {
+            String msg = "This book is currently reserved.";
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setContentText(msg);
+            alert.setTitle("Alert");
+            alert.setHeaderText(null);
+            alert.showAndWait();
         }
     }
 
