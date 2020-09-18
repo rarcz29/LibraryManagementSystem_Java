@@ -8,6 +8,7 @@ import javateam.Models.ReadingNow;
 public class ReadingNowController
 {
     private ReadingNow model = new ReadingNow();
+    private ReadingNow.ReadingNowIterator iterator;
 
     @FXML private Label mainLabel;
     @FXML private Label secondLabel;
@@ -15,16 +16,43 @@ public class ReadingNowController
     @FXML
     public void initialize()
     {
-        var iterator = model.getReadingNowIterator();
-        var value = String.valueOf(((String[])iterator.previous())[3]);
+        iterator = model.getReadingNowIterator();
 
+        if (!iterator.hasNext())
+        {
+            secondLabel.setText("List is empty");
+            return;
+        }
+
+        //iterator.next();
+        String[] arr = ((String[])iterator.next());
+        String title = arr[2];
+        String author = arr[3];
+        String value = String.valueOf("Select: \"" + title + "\" " + author);
         secondLabel.setText(value);
     }
 
     @FXML
     public void nextButtonOnAction()
     {
-        //var iterator = model.getReadingNowIterator();
-        //var value = iterator.
+        if (iterator.hasNext())
+        {
+            String[] arr = ((String[])iterator.next());
+            String title = arr[2];
+            String author = arr[3];
+            String value = String.valueOf("Select: \"" + title + "\" " + author);
+            secondLabel.setText(value);
+        }
+        else
+        {
+            while (iterator.hasPrevious())
+                iterator.previous();
+
+            String[] arr = ((String[])iterator.previous());
+            String title = arr[2];
+            String author = arr[3];
+            String value = String.valueOf("Select: \"" + title + "\" " + author);
+            secondLabel.setText(value);
+        }
     }
 }
