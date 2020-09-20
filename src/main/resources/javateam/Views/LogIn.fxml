@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javateam.Controllers.LogInController">
+   <children>
+       <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="605.0" style="-fx-background-color: #47F3D3;" text="Log in ">
+       <font>
+           <Font name="Antonio Regular" size="30.0" />
+       </font>
+       <padding>
+           <Insets left="20.0" />
+       </padding></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="98.0" prefWidth="396.0" text="Welcome! Log in, please. " textAlignment="CENTER" textFill="#47f3d3">
+         <font>
+            <Font name="Antonio Regular" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTextField" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#LogInButtonAction" prefHeight="30.0" prefWidth="200.0" promptText="Username" />
+      <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" onAction="#LogInButtonAction" prefHeight="30.0" prefWidth="200.0" promptText="Password">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin></PasswordField>
+      <Pane prefHeight="37.0" prefWidth="560.0" />
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#LogInButtonAction" prefHeight="32.0" prefWidth="115.0" styleClass="button-std" text="Log in" GridPane.columnIndex="1">
+           <GridPane.margin>
+               <Insets left="20.0" />
+           </GridPane.margin>
+           <font>
+               <Font name="Antonio Regular" size="14.0" />
+           </font>
+           <VBox.margin>
+               <Insets />
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="52.0" prefWidth="523.0" text="Don't have account?" textFill="#47f3d3">
+         <font>
+            <Font name="Antonio Regular" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin></Label>
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#SignUpButtonOnAction" prefHeight="32.0" prefWidth="115.0" styleClass="button-std" text="Sign up" GridPane.columnIndex="1">
+           <GridPane.margin>
+               <Insets left="20.0" />
+           </GridPane.margin>
+           <font>
+               <Font name="Antonio Regular" size="14.0" />
+           </font>
+           <VBox.margin>
+               <Insets />
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</VBox>

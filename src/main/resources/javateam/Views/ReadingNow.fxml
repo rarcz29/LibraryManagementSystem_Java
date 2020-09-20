@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javateam.Controllers.ReadingNowController">
+   <children>
+       <Label contentDisplay="BOTTOM" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #47F3D3;" text="Reading now">
+           <font>
+               <Font name="Antonio Regular" size="30.0" />
+           </font>
+           <padding>
+               <Insets left="20.0" />
+           </padding></Label>
+      <Label fx:id="mainLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="560.0" text="Nothing">
+         <font>
+            <Font name="Antonio Regular" size="22.0" />
+         </font>
+      </Label>
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#returnBookButtonOnAction" prefHeight="32.0" prefWidth="115.0" styleClass="button-std" text="Raturn book" GridPane.columnIndex="1">
+           <GridPane.margin>
+               <Insets left="20.0" />
+           </GridPane.margin>
+           <font>
+               <Font name="Antonio Regular" size="14.0" />
+           </font>
+           <VBox.margin>
+               <Insets />
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Pane prefHeight="18.0" prefWidth="600.0" />
+      <Label fx:id="secondLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="153.0" prefWidth="560.0" text="The list is empty." textAlignment="CENTER" textFill="#47f3d3">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <Pane prefHeight="22.0" prefWidth="560.0" />
+      <GridPane alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+             <Button focusTraversable="false" mnemonicParsing="false" onAction="#nextButtonOnAction" prefHeight="32.0" prefWidth="115.0" styleClass="button-std" text="Next">
+                 <GridPane.margin>
+                     <Insets left="150.0" right="20.0" />
+                 </GridPane.margin>
+                 <font>
+                     <Font name="Antonio Regular" size="14.0" />
+                 </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+             <Button focusTraversable="false" mnemonicParsing="false" onAction="#confirmButtonOnAction" prefHeight="32.0" prefWidth="115.0" styleClass="button-std" text="Confirm" GridPane.columnIndex="1">
+                 <GridPane.margin>
+                     <Insets left="20.0" />
+                 </GridPane.margin>
+                 <font>
+                     <Font name="Antonio Regular" size="14.0" />
+                 </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </GridPane>
+   </children>
+</VBox>
