@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javateam.Controllers.BookstandsController">
+   <children>
+       <Label prefHeight="60.0" prefWidth="560.0" style="-fx-background-color: #47F3D3;" text="Bookstands">
+           <font>
+               <Font name="Antonio Regular" size="30.0" />
+           </font>
+           <padding>
+               <Insets left="20.0" />
+           </padding></Label>
+      <TextField fx:id="descriptionTextField" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#AddBookstandButtonOnAction" prefHeight="25.0" prefWidth="332.0" promptText="Description">
+         <VBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </VBox.margin></TextField>
+       <Button focusTraversable="false" mnemonicParsing="false" onAction="#AddBookstandButtonOnAction" prefHeight="32.0" prefWidth="115.0" styleClass="button-std" text="Add bookstand" GridPane.columnIndex="1">
+           <GridPane.margin>
+               <Insets left="20.0" />
+           </GridPane.margin>
+           <font>
+               <Font name="Antonio Regular" size="14.0" />
+           </font>
+           <VBox.margin>
+               <Insets bottom="20.0" />
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TableView fx:id="table" focusTraversable="false" prefHeight="234.0" prefWidth="560.0">
+        <columns>
+          <TableColumn fx:id="bookstandId" prefWidth="100.66665649414062" text="Bookstand id" />
+          <TableColumn fx:id="description" prefWidth="397.33331298828125" text="Description" />
+            <TableColumn fx:id="select" prefWidth="61.3333740234375" text="select" />
+        </columns>
+      </TableView>
+       <Button alignment="TOP_CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#RemoveSelectedBookstands" prefHeight="32.0" prefWidth="156.0" styleClass="button-std" text="Remove bookstand" GridPane.columnIndex="1">
+           <GridPane.margin>
+               <Insets left="20.0" />
+           </GridPane.margin>
+           <font>
+               <Font name="Antonio Regular" size="14.0" />
+           </font>
+           <VBox.margin>
+               <Insets top="20.0" />
+           </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</VBox>
