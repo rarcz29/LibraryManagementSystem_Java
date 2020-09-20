@@ -61,7 +61,7 @@ public class MenuController
 
         try
         {
-            root = FXMLLoader.load(getClass().getResource("../Views/" + ui + ".fxml"));
+            root = FXMLLoader.load(App.class.getResource("Views/" + ui + ".fxml"));
             borderPane.setCenter(root);
         }
         catch (Exception ex)
